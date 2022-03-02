@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Login 10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+	</head>
+	<body class="img js-fullheight" style="background-image:url('assets/image/sndp.jpg'); background-repeat: no-repeat; background-size: cover;">
+	<section class="ftco-section">
+
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+                      <h5 class="text-white" >Username :</h5>  <input    ngModel formControlName="username" type="text" class="form-control" />
+                      <h5 class="text-white" >Password :</h5>    <input ngModel  minlength="4" formControlName="password" type="password" class="form-control" />
+                        <div class="form-group">
+                            <button mat-dialog-close (click)="signIn()" type="submit" class="btn float-right  btn-warning"> login </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+
+                    </div>
+                    <div class="d-flex justify-content-center">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	</section>
+
+
+	</body>
+</html>
