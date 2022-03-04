@@ -25,11 +25,15 @@ export class UserAuthService {
       )
   }
 
-  getbyid(user:USER,id:string): Observable<USER> {
-    return this.http.get<USER>(this.apiServer+id)
+  getbyid(user:USER,username:string): Observable<USER> {
+    return this.http.get<USER>(this.apiServer+username)
       .pipe(
         catchError(this.errorHandler)
       )
+  }
+
+  getUsers(): Observable<any>{
+    return this.http.get(this.apiServer);
   }
   getbyrole(role:string): Observable<USER[]> {
     return this.http.get<USER[]>(this.apiServer+"role/"+role)

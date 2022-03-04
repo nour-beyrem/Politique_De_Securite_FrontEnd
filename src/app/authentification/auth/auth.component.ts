@@ -61,7 +61,7 @@ export class AuthComponent implements OnInit {
     );
 
    if(data.user.role=="responsable" ){
-    this.toastr.success('welcom responsable');}
+    this.router.navigate(['cellule']);}
    else if(data.user.role=="agent" ){
     this.toastr.success('welcom agent');}
 

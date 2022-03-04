@@ -7,11 +7,20 @@ import { JwtInterceptor } from './authentification/jwt.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthComponent } from './authentification/auth/auth.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserComponent } from './user/user.component';
+import { CelluleComponent } from './cellule/cellule.component';
+import { HomeResComponent } from './home-res/home-res.component';
+import { UpdateCelluleComponent } from './cellule/update-cellule/update-cellule.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent
+    AuthComponent,
+    UserComponent,
+    CelluleComponent,
+    HomeResComponent,
+    UpdateCelluleComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +28,8 @@ import { AuthComponent } from './authentification/auth/auth.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [ {provide: HTTP_INTERCEPTORS,
     useClass: JwtInterceptor,

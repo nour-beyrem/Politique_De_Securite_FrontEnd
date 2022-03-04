@@ -8,18 +8,25 @@ export class USER {
 
   sexe: string="";
 
-    adresse: string="";
+  adresse: string="";
 
-      cin: number = 0;
+  cin: number = 0;
 
-     role: string="";
+  role: string="";
+  age:number=0;
+  direction:string="";
+  site:string="";
+  sortie:boolean=false;
+  charte:boolean=false;
+  teletravail:boolean=false;
+  matricule:string="";
 
 
-    username: string="";
-    image: string="";
+  username: string="";
 
 
-    email: string="";
+
+  email: string="";
 
   password: string="";
 

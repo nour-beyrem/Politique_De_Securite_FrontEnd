@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './authentification/auth/auth.component';
+import { CelluleComponent } from './cellule/cellule.component';
+import { UpdateCelluleComponent } from './cellule/update-cellule/update-cellule.component';
+import { HomeResComponent } from './home-res/home-res.component';
 
-const routes: Routes = [{path: '', component: AuthComponent},];
+const routes: Routes = [{path: '', component: AuthComponent},
+{path: 'cellule', component: CelluleComponent},
+{path: 'homeRes', component: HomeResComponent},
+{path: 'updateCellule/:id', component: UpdateCelluleComponent},];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
