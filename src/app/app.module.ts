@@ -12,6 +12,8 @@ import { UserComponent } from './user/user.component';
 import { CelluleComponent } from './cellule/cellule.component';
 import { HomeResComponent } from './home-res/home-res.component';
 import { UpdateCelluleComponent } from './cellule/update-cellule/update-cellule.component';
+import { ReunionCComponent } from './reunion-c/reunion-c.component';
+import { UpdateReunionComponent } from './reunionC/update-reunion/update-reunion.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { UpdateCelluleComponent } from './cellule/update-cellule/update-cellule.
     UserComponent,
     CelluleComponent,
     HomeResComponent,
-    UpdateCelluleComponent
+    UpdateCelluleComponent,
+    ReunionCComponent,
+    UpdateReunionComponent
   ],
   imports: [
     BrowserModule,
