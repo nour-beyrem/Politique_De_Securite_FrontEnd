@@ -1,4 +1,6 @@
-export class USER {
+import { USER } from "./user";
+
+export class CELLULE {
   id:string="";
   reference:number=0;
   president:USER | undefined;

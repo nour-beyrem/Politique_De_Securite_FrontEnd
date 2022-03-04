@@ -12,9 +12,9 @@
                 <b> Acceuil</b>
               </a>
             </li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/cellule#list">Nos Cellule</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/reunion#list">Reunions</a></li>
               <li class="nav-item"></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/cellule#ajouter">Ajout Cellule</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/reunion#ajouter">Ajout Reunion</a></li>
               <li class="nav-item"></li>
 
 
@@ -51,33 +51,37 @@
       <div class="container" >
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="text-uppercase section-heading">Liste Des Cellules</h2>
+                <h2 class="text-uppercase section-heading">Liste Des Reunions</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
-              <table class="table" id='cellule' >
+              <table class="table" id='reunion' >
                 <thead class="thead-dark" type="color" value="#123456" >
                     <tr >
-                        <th>Référence</th>
-                        <th>President</th>
-                        <th>Membre 1 </th>
-                        <th>Membre 2</th>
-                        <th>Traitement</th>
+                        <th>ID</th>
+                        <th>Ordre Du Jour</th>
+                        <th>Discussion </th>
+                        <th>Lieu</th>
+                        <th>Date</th>
+
+                        <th>Cellule</th>
 
 
 
                     </tr>
                 </thead>
-                <tr *ngFor="let cellule of cellules ">
-                    <th>{{cellule.reference}}</th>
-                    <th>{{cellule.president.prenom}}</th>
-                    <th>{{cellule.membre1.prenom}}</th>
-                    <th>{{cellule.membre2.prenom}}</th>
+                <tr *ngFor="let reunion of reunions ">
+                    <th>{{reunion.id}}</th>
+                    <th>{{reunion.ordreDuJour}}</th>
+                    <th>{{reunion.discussion}}</th>
+                    <th>{{reunion.lieu}}</th>
+                    <th>{{reunion.Date | date}}</th>
+                    <th>{{reunion.cellule.id}}</th>
 
                     <th>
-                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateCellule',cellule.id]"> update</button>
-                      <button type="button" class="btn btn-outline-secondary" (click)="deleteCellule(cellule.id)"> delete</button>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateReunion',reunion.id]"> update</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteReunion(reunion.id)"> delete</button>
                   </th>
 
                 </tr>
@@ -96,7 +100,7 @@
       <div class="container" >
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="text-uppercase section-heading">Ajouter une Cellule</h2>
+                <h2 class="text-uppercase section-heading">Ajouter un Reunion</h2>
             </div>
         </div>
         <div class="row">
@@ -107,20 +111,22 @@
 
 
                             <div class="form-group">
-                              <input ngModel class="form-control" type="text" id="reference"  name="reference" placeholder="reference de la cellulet*" required [(ngModel)]="celluleAdd.reference" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                              <input ngModel class="form-control" type="text" id="ordreDuJour"  name="ordreDuJour" placeholder="ordre du jour du reunion*" required [(ngModel)]="reunionAdd.ordreDuJour" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
                               <div class="form-group">
-                            <select ngModel class="form-control" name="president" required [(ngModel)]="celluleAdd.president" id="president" >
-                              <option *ngFor="let user of users" >{{user.username}}</option>
-                            </select>
-                           <small class="form-text text-danger help-block lead"></small></div>
+                                <input ngModel class="form-control" type="text" id="discussion"  name="discussion" placeholder="discussion reunion*" required [(ngModel)]="reunionAdd.discussion" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="lieu"  name="lieu" placeholder="lieu du reunion*" required [(ngModel)]="reunionAdd.lieu" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="date" id="date"  name="date" placeholder="date du reunion*" required [(ngModel)]="reunionAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                  <div class="form-group">
+                                    <input ngModel class="form-control" type="file" id="desicion"  name="desicion" placeholder="desicion du reunion*" required [(ngModel)]="reunionAdd.decision" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
                            <div class="form-group">
-                            <select ngModel class="form-control" name="membre1" required [(ngModel)]="celluleAdd.membre1" id="membre1" >
-                              <option *ngFor="let user of users" >{{user.username}}</option>
-                            </select>
-                           <small class="form-text text-danger help-block lead"></small></div>
-                           <div class="form-group">
-                            <select ngModel class="form-control" name="membre2" required [(ngModel)]="celluleAdd.membre2" id="membre2" >
-                              <option *ngFor="let user of users" >{{user.username}}</option>
+                            <select ngModel class="form-control" name="cellule" required [(ngModel)]="reunionAdd.cellule" id="cellule" >
+                              <option *ngFor="let cellule of cellules" >{{cellule.id}}</option>
                             </select>
                            <small class="form-text text-danger help-block lead"></small></div> </div>
 
@@ -134,7 +140,7 @@
                             <button
 
 
-                            (click)="createCellule()"
+                            (click)="createReunion()"
                              class="btn btn-warning btn-xl text-uppercase" type="submit">Ajouter</button>
 
                              <button
@@ -150,3 +156,4 @@
 
 
   </section>
+

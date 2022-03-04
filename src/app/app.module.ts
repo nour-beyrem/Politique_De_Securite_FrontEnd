@@ -12,8 +12,10 @@ import { UserComponent } from './user/user.component';
 import { CelluleComponent } from './cellule/cellule.component';
 import { HomeResComponent } from './home-res/home-res.component';
 import { UpdateCelluleComponent } from './cellule/update-cellule/update-cellule.component';
-import { ReunionCComponent } from './reunion-c/reunion-c.component';
+
 import { UpdateReunionComponent } from './reunionC/update-reunion/update-reunion.component';
+import { ReunionCComponent } from './reunionC/reunion-c/reunion-c.component';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { UpdateReunionComponent } from './reunionC/update-reunion/update-reunion
     HomeResComponent,
     UpdateCelluleComponent,
     ReunionCComponent,
-    UpdateReunionComponent
+    UpdateReunionComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
