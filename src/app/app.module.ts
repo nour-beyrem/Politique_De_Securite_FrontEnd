@@ -16,6 +16,8 @@ import { UpdateCelluleComponent } from './cellule/update-cellule/update-cellule.
 import { UpdateReunionComponent } from './reunionC/update-reunion/update-reunion.component';
 import { ReunionCComponent } from './reunionC/reunion-c/reunion-c.component';
 import { SafePipe } from './safe.pipe';
+import { UpdateUserComponent } from './user/update-user/update-user.component';
+import { SignatureComponent } from './user/signature/signature.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { SafePipe } from './safe.pipe';
     ReunionCComponent,
     UpdateReunionComponent,
     SafePipe,
+    UpdateUserComponent,
+    SignatureComponent,
   ],
   imports: [
     BrowserModule,

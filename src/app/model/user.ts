@@ -16,7 +16,7 @@ export class USER {
   age:number=0;
   direction:string="";
   site:string="";
-  sortie:boolean=false;
+  sortie:boolean=true;
   charte:boolean=false;
   teletravail:boolean=false;
   matricule:string="";
