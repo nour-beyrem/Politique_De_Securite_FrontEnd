@@ -18,6 +18,8 @@ import { ReunionCComponent } from './reunionC/reunion-c/reunion-c.component';
 import { SafePipe } from './safe.pipe';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
 import { SignatureComponent } from './user/signature/signature.component';
+import { DocumentComponent } from './document/document.component';
+import { UpdateDocumentComponent } from './document/update-document/update-document.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { SignatureComponent } from './user/signature/signature.component';
     SafePipe,
     UpdateUserComponent,
     SignatureComponent,
+    DocumentComponent,
+    UpdateDocumentComponent,
   ],
   imports: [
     BrowserModule,

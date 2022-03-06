@@ -1,0 +1,90 @@
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+<p></p>
+<p></p>
+<p></p>
+<p></p><p></p>
+<p></p>
+<p></p>
+<p></p>
+<div >
+    <div class="container" >
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="text-uppercase section-heading">details du document </h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <form #monFormulaire="ngForm">
+                <div class="form-row">
+                    <div class="col-md-6">
+
+                      <form>
+                        <select ngModel class="form-control"  id="typeChapitre" name="typeChapitre"  placeholder="type de document  *" required [(ngModel)]="documentAdd.typeChapitre">
+                          <option value="">--choisir un type ou non du document--</option>
+                          <option>charte </option>
+                          <option>confidentialite</option>
+                          <option>autre</option>
+
+
+                          </select>
+                        </form>
+<p></p>
+
+
+
+                        <div class="form-group">
+                          <textarea ngModel class="form-control" type="text" id="commentaire"  name="commentaire" placeholder="commentaire sur le document*" required [(ngModel)]="documentAdd.commentaire" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
+
+                          <form>
+                            <select ngModel class="form-control"  id="qui" name="qui"  placeholder="qui  *" required [(ngModel)]="documentAdd.qui">
+                              <option value="">--choisir un destinataire--</option>
+                              <option>responsable </option>
+                              <option>agent</option>
+                              <option>stagiare</option>
+                              <option>partenaire</option>
+
+                              </select>
+                            </form>
+                            <p></p>
+                            <div class="form-group">
+                              <iframe [src]= "support" width="50%" height="250px"> </iframe>
+                              <p></p>
+                              <input ngModel class="form-control" type="file" id="support"  name="support" placeholder="support du document*" required [(ngModel)]="documentAdd.document" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+                            </div>
+
+
+
+
+
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                        <div id="success"></div>
+                        <button
+
+                        (click)="processForm()"
+
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Modifier</button>
+                         <button
+                         (click)="Annuler()"
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                    </div>
+                  </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    </div>
+
+
+

@@ -1,0 +1,168 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top " id="mainNav">
+  <div class="container"><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto text-uppercase">
+            <li class="nav-item">
+              <a
+
+                class="nav-link"
+                routerLinkActive="active text-primary"
+                (click)="home()"
+              >
+                <b> Acceuil</b>
+              </a>
+            </li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/document#ajouter">Ajout Document</a></li>
+              <li class="nav-item"></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/document#list">Nos Document</a></li>
+              <li class="nav-item"></li>
+
+
+
+              <li class="nav-item">
+                <a
+                  *ngIf="authService.isAuthenticated()"
+                  class="nav-link"
+                  routerLinkActive="active text-primary"
+                  (click)="logout()"
+                >
+                  <b> Logout</b>
+                </a>
+              </li>
+              <li class="nav-item"></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+
+
+
+  <!-- team section -->
+
+
+  <section class="bg-light" id="ajouter">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Ajouter un document</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <form #monFormulaire="ngForm">
+                    <div class="form-row">
+                        <div class="col-md-6">
+
+                          <form>
+                            <select ngModel class="form-control"  id="typeChapitre" name="typeChapitre"  placeholder="type de document  *" required [(ngModel)]="documentAdd.typeChapitre">
+                              <option value="">--choisir un type ou non du document--</option>
+                              <option>charte </option>
+                              <option>confidentialite</option>
+                              <option>autre</option>
+
+
+                              </select>
+                            </form>
+<p></p>
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="file" id="document"  name="document" placeholder="document*" required [(ngModel)]="documentAdd.document" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                            <div class="form-group">
+                              <textarea ngModel class="form-control" type="text" id="commentaire"  name="commentaire" placeholder="commentaire sur le document*" required [(ngModel)]="documentAdd.commentaire" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
+
+                              <form>
+                                <select ngModel class="form-control"  id="qui" name="qui"  placeholder="qui  *" required [(ngModel)]="documentAdd.qui">
+                                  <option value="">--choisir un destinataire--</option>
+                                  <option>responsable </option>
+                                  <option>agent</option>
+                                  <option>stagiare</option>
+                                  <option>partenaire</option>
+
+                                  </select>
+                                </form>
+                            </div>
+
+
+
+
+
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                            <div id="success"></div>
+                            <button
+
+
+                            (click)="createDocument()"
+                             class="btn btn-warning btn-xl text-uppercase" type="submit">Ajouter</button>
+
+                             <button
+                             (click)="Annuler()"
+                             class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                        </div>
+                      </div>
+                </form>
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+
+ <section class="bg-light" id="list">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Liste Des Documents</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+              <table class="table" id='reunion' >
+                <thead class="thead-dark" type="color" value="#123456" >
+                    <tr >
+                        <th>ID</th>
+                        <th>Nom du Document</th>
+                        <th>Destinataire </th>
+                        <th>Commentaire</th>
+
+
+
+
+                    </tr>
+                </thead>
+                <tr *ngFor="let document of documents ">
+                    <th>{{document.id}}</th>
+                    <th>{{document.typeChapitre}}</th>
+                    <th>{{document.qui}}</th>
+                    <th>{{document.commentaire}}</th>
+
+
+                    <th>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateDocument',document.id]"> update</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteDocument(document.id)"> delete</button>
+                  </th>
+
+                </tr>
+            </table>
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+

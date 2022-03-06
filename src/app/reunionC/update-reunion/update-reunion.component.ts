@@ -32,8 +32,9 @@ export class UpdateReunionComponent implements OnInit {
 
        this.reunionAdd=result;
 
-       console.log(this.decision)
+
        this.decision = this.sanitizer.bypassSecurityTrustResourceUrl(this.reunionAdd.decision);
+       console.log(this.decision)
       },
       (error)=>{
        alert('error')
