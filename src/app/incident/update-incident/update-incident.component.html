@@ -1,0 +1,87 @@
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+<p></p>
+<p></p>
+<p></p>
+<p></p><p></p>
+<p></p>
+<p></p>
+<p></p>
+<div >
+    <div class="container" >
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="text-uppercase section-heading">details de la cellule </h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <form #monFormulaire="ngForm">
+                <div class="form-row">
+                    <div class="col-md-6">
+
+
+                      <div class="form-group">
+                        <input ngModel class="form-control" type="text" id="nomIncident"  name="nomIncident" placeholder="nom de l'incident*" required [(ngModel)]="incidentAdd.nomIncident" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                        <div class="form-group">
+                          <textarea ngModel class="form-control" type="text" id="source"  name="source" placeholder="source de l'incident*" required [(ngModel)]="incidentAdd.source" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
+
+                          <div class="form-group">
+                            <input ngModel class="form-control" type="text" id="destination"  name="destination" placeholder="destination de l'incident*" required [(ngModel)]="incidentAdd.destination" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                          <div class="form-group">
+                            <input ngModel class="form-control" type="date" id="date"  name="date" placeholder="date de l'incident*" required [(ngModel)]="incidentAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+              <div class="form-group">
+                                <input ngModel class="form-control" type="text" id="impact"  name="impact" placeholder="impact de l'incident*" required [(ngModel)]="incidentAdd.impact" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="dureePerturbation"  name="dureePerturbation" placeholder="duree de Perturbation de l'incident*" required [(ngModel)]="incidentAdd.dureePerturbation" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+                                  <div class="form-group">
+                                    <input ngModel class="form-control" type="text" id="intervention"  name="intervention" placeholder="intervention de qui sur l'incident*" required [(ngModel)]="incidentAdd.intervention" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                    <div class="form-group">
+                                      <input ngModel class="form-control" type="text" id="dommage"  name="dommage" placeholder="dommage de l'incident*" required [(ngModel)]="incidentAdd.dommage" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                      <div class="form-group">
+                                        <input ngModel class="form-control" type="text" id="demarcheRepartion"  name="demarcheRepartion" placeholder="demarche de Repartion de l'incident*" required [(ngModel)]="incidentAdd.demarcheRepartion" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                        <div class="form-group">
+                                          <input ngModel class="form-control" type="text" id="demarchePrevention"  name="demarchePrevention" placeholder="demarche de Prevention de l'incident*" required [(ngModel)]="incidentAdd.demarchePrevention" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+                            </div>
+
+
+
+
+
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                        <div id="success"></div>
+                        <button
+
+                        (click)="processForm()"
+
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Modifier</button>
+                         <button
+                         (click)="Annuler()"
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                    </div>
+                  </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    </div>
+
+

@@ -6,6 +6,8 @@ import { UpdateCelluleComponent } from './cellule/update-cellule/update-cellule.
 import { DocumentComponent } from './document/document.component';
 import { UpdateDocumentComponent } from './document/update-document/update-document.component';
 import { HomeResComponent } from './home-res/home-res.component';
+import { IncidentComponent } from './incident/incident.component';
+import { UpdateIncidentComponent } from './incident/update-incident/update-incident.component';
 import { ReunionCComponent } from './reunionC/reunion-c/reunion-c.component';
 import { UpdateReunionComponent } from './reunionC/update-reunion/update-reunion.component';
 import { SignatureComponent } from './user/signature/signature.component';
@@ -19,10 +21,12 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'reunion', component:ReunionCComponent},
 {path: 'document', component:DocumentComponent},
 {path: 'user', component:UserComponent},
+{path: 'incident', component:IncidentComponent},
 {path: 'signature', component:SignatureComponent},
 {path: 'updateReunion/:id', component:UpdateReunionComponent},
 {path: 'updateDocument/:id', component:UpdateDocumentComponent},
-{path: 'updateUser/:id', component:UpdateUserComponent}];
+{path: 'updateUser/:id', component:UpdateUserComponent},
+{path: 'updateIncident/:id', component:UpdateIncidentComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -20,6 +20,8 @@ import { UpdateUserComponent } from './user/update-user/update-user.component';
 import { SignatureComponent } from './user/signature/signature.component';
 import { DocumentComponent } from './document/document.component';
 import { UpdateDocumentComponent } from './document/update-document/update-document.component';
+import { IncidentComponent } from './incident/incident.component';
+import { UpdateIncidentComponent } from './incident/update-incident/update-incident.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { UpdateDocumentComponent } from './document/update-document/update-docum
     SignatureComponent,
     DocumentComponent,
     UpdateDocumentComponent,
+    IncidentComponent,
+    UpdateIncidentComponent,
   ],
   imports: [
     BrowserModule,

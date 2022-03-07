@@ -1,0 +1,173 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top " id="mainNav">
+  <div class="container"><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto text-uppercase">
+            <li class="nav-item">
+              <a
+
+                class="nav-link"
+                routerLinkActive="active text-primary"
+                (click)="home()"
+              >
+                <b> Acceuil</b>
+              </a>
+            </li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/incident#list">Incidents</a></li>
+              <li class="nav-item"></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/incident#ajouter">Ajout Incident</a></li>
+              <li class="nav-item"></li>
+
+
+              <li class="nav-item">
+                <a
+                  *ngIf="authService.isAuthenticated()"
+                  class="nav-link"
+                  routerLinkActive="active text-primary"
+                  (click)="logout()"
+                >
+                  <b> Logout</b>
+                </a>
+              </li>
+              <li class="nav-item"></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+
+
+
+  <!-- team section -->
+  <section class="bg-light" id="list">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Liste Des Incidents</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+              <table class="table" id='incident' >
+                <thead class="thead-dark" type="color" value="#123456" >
+                    <tr >
+                        <th>ID</th>
+                        <th>Nom Incident</th>
+                        <th>Source </th>
+                        <th>Destination</th>
+                        <th>Impact</th>
+
+                        <th>Date</th>
+
+
+
+                    </tr>
+                </thead>
+                <tr *ngFor="let incident of incidents ">
+                    <th>{{incident.id}}</th>
+                    <th>{{incident.nomIncident}}</th>
+                    <th>{{incident.source}}</th>
+                    <th>{{incident.destination}}</th>
+                    <th>{{incident.impact}}</th>
+                    <th>{{incident.Date| date}}</th>
+
+
+                    <th>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateIncident',incident.id]"> update</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteIncident(incident.id)"> delete</button>
+                  </th>
+
+                </tr>
+            </table>
+
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+  <section class="bg-light" id="ajouter">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Ajouter un Incident</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <form #monFormulaire="ngForm">
+                    <div class="form-row">
+                        <div class="col-md-6">
+
+
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="nomIncident"  name="nomIncident" placeholder="nom de l'incident*" required [(ngModel)]="incidentAdd.nomIncident" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                              <div class="form-group">
+                                <textarea ngModel class="form-control" type="text" id="source"  name="source" placeholder="source de l'incident*" required [(ngModel)]="incidentAdd.source" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
+
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="destination"  name="destination" placeholder="destination de l'incident*" required [(ngModel)]="incidentAdd.destination" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="date" id="date"  name="date" placeholder="date de l'incident*" required [(ngModel)]="incidentAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                    <div class="form-group">
+                                      <input ngModel class="form-control" type="text" id="impact"  name="impact" placeholder="impact de l'incident*" required [(ngModel)]="incidentAdd.impact" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                      <div class="form-group">
+                                        <input ngModel class="form-control" type="text" id="dureePerturbation"  name="dureePerturbation" placeholder="duree de Perturbation de l'incident*" required [(ngModel)]="incidentAdd.dureePerturbation" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+                                        <div class="form-group">
+                                          <input ngModel class="form-control" type="text" id="intervention"  name="intervention" placeholder="intervention de qui sur l'incident*" required [(ngModel)]="incidentAdd.intervention" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                          <div class="form-group">
+                                            <input ngModel class="form-control" type="text" id="dommage"  name="dommage" placeholder="dommage de l'incident*" required [(ngModel)]="incidentAdd.dommage" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                            <div class="form-group">
+                                              <input ngModel class="form-control" type="text" id="demarcheRepartion"  name="demarcheRepartion" placeholder="demarche de Repartion de l'incident*" required [(ngModel)]="incidentAdd.demarcheRepartion" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                              <div class="form-group">
+                                                <input ngModel class="form-control" type="text" id="demarchePrevention"  name="demarchePrevention" placeholder="demarche de Prevention de l'incident*" required [(ngModel)]="incidentAdd.demarchePrevention" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                                          </div>
+
+
+
+
+
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                            <div id="success"></div>
+                            <button
+
+
+                            (click)="createIncident()"
+                             class="btn btn-warning btn-xl text-uppercase" type="submit">Ajouter</button>
+
+                             <button
+                             (click)="Annuler()"
+                             class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                        </div>
+                      </div>
+                </form>
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+
