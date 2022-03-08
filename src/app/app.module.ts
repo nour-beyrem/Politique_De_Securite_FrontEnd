@@ -22,6 +22,12 @@ import { DocumentComponent } from './document/document.component';
 import { UpdateDocumentComponent } from './document/update-document/update-document.component';
 import { IncidentComponent } from './incident/incident.component';
 import { UpdateIncidentComponent } from './incident/update-incident/update-incident.component';
+import { ActifComponent } from './actif/actif.component';
+import { UpdateActifComponent } from './actif/update-actif/update-actif.component';
+import { RapportComponent } from './rapport/rapport.component';
+import { UpdateRapportComponent } from './rapport/update-rapport/update-rapport.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 
 @NgModule({
   declarations: [
@@ -40,15 +46,22 @@ import { UpdateIncidentComponent } from './incident/update-incident/update-incid
     UpdateDocumentComponent,
     IncidentComponent,
     UpdateIncidentComponent,
+    ActifComponent,
+    UpdateActifComponent,
+    RapportComponent,
+    UpdateRapportComponent,
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PdfViewerModule
+
   ],
   providers: [ {provide: HTTP_INTERCEPTORS,
     useClass: JwtInterceptor,

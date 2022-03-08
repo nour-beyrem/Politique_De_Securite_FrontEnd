@@ -1,0 +1,75 @@
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+<p></p>
+<p></p>
+<p></p>
+<p></p><p></p>
+<p></p>
+<p></p>
+<p></p>
+<div >
+    <div class="container" >
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="text-uppercase section-heading">details du rapport </h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <form #monFormulaire="ngForm">
+                <div class="form-row">
+                    <div class="col-md-6">
+
+                       <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="titre"  name="titre" placeholder="titre du rapport*" required [(ngModel)]="rapportAdd.titre" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                              <div class="form-group">
+                                <input ngModel class="form-control" type="text" id="type"  name="type" placeholder="type du rapport*" required [(ngModel)]="rapportAdd.type" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="sujet"  name="sujet" placeholder="sujet du rapport*" required [(ngModel)]="rapportAdd.sujet" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                              <div class="form-group">
+                                <textarea ngModel class="form-control" type="text" id="contenu"  name="contenu" placeholder="contenu du rapport*" required [(ngModel)]="rapportAdd.contenu" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
+
+                               <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="date"  name="date" placeholder="date du rapport*" required [(ngModel)]="rapportAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+
+                            </div>
+
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <iframe [src]= "filePath" width="50%" height="250px"> </iframe>
+                                <input ngModel class="form-control" type="file" id="filePath"  name="filePath" placeholder="vous pouvez ajouter une fichier*" required [(ngModel)]="rapportAdd.filePath" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                              </div>
+
+
+
+
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                        <div id="success"></div>
+                        <button
+
+                        (click)="processForm()"
+
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Modifier</button>
+                         <button
+                         (click)="Annuler()"
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                    </div>
+                  </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    </div>
+

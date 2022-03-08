@@ -12,9 +12,9 @@
                 <b> Acceuil</b>
               </a>
             </li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/reunion#list">Reunions</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/rapport#list">Rapports</a></li>
               <li class="nav-item"></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/reunion#ajouter">Ajout Reunion</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/rapport#ajouter">Ajout Rapport</a></li>
               <li class="nav-item"></li>
 
 
@@ -51,38 +51,38 @@
       <div class="container" >
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="text-uppercase section-heading">Liste Des Reunions</h2>
+                <h2 class="text-uppercase section-heading">Liste Des Rapports</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
-              <table class="table" id='reunion' >
+              <table class="table" id='rapport' >
                 <thead class="thead-dark" type="color" value="#123456" >
                     <tr >
                         <th>ID</th>
-                        <th>Ordre Du Jour</th>
-                        <th>Discussion </th>
-                        <th>Lieu</th>
+                        <th>Titre</th>
+                        <th>Type </th>
+                        <th>Sujet</th>
                         <th>Date</th>
-
-                        <th>Cellule</th>
                         <th>Traitement</th>
+
+
 
 
 
                     </tr>
                 </thead>
-                <tr *ngFor="let reunion of reunions ">
-                    <th>{{reunion.id}}</th>
-                    <th>{{reunion.ordreDuJour}}</th>
-                    <th>{{reunion.discussion}}</th>
-                    <th>{{reunion.lieu}}</th>
-                    <th>{{reunion.Date | date}}</th>
-                    <th>{{reunion.cellule.id}}</th>
+                <tr *ngFor="let rapport of rapports ">
+                    <th>{{rapport.id}}</th>
+                    <th>{{rapport.titre}}</th>
+                    <th>{{rapport.type}}</th>
+                    <th>{{rapport.sujet}}</th>
+                    <th>{{rapport.Date | date}}</th>
+
 
                     <th>
-                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateReunion',reunion.id]"> update</button>
-                      <button type="button" class="btn btn-outline-secondary" (click)="deleteReunion(reunion.id)"> delete</button>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateRapport',rapport.id]"> update</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteRapport(rapport.id)"> delete</button>
                   </th>
 
                 </tr>
@@ -101,7 +101,7 @@
       <div class="container" >
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="text-uppercase section-heading">Ajouter un Reunion</h2>
+                <h2 class="text-uppercase section-heading">Ajouter un Rapport</h2>
             </div>
         </div>
         <div class="row">
@@ -112,24 +112,24 @@
 
 
                             <div class="form-group">
-                              <input ngModel class="form-control" type="text" id="ordreDuJour"  name="ordreDuJour" placeholder="ordre du jour du reunion*" required [(ngModel)]="reunionAdd.ordreDuJour" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                              <input ngModel class="form-control" type="text" id="titre"  name="titre" placeholder="titre du rapport*" required [(ngModel)]="rapportAdd.titre" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                              <div class="form-group">
+                                <input ngModel class="form-control" type="text" id="type"  name="type" placeholder="type du rapport*" required [(ngModel)]="rapportAdd.type" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="sujet"  name="sujet" placeholder="sujet du rapport*" required [(ngModel)]="rapportAdd.sujet" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                               <div class="form-group">
-                                <textarea ngModel class="form-control" type="text" id="discussion"  name="discussion" placeholder="discussion reunion*" required [(ngModel)]="reunionAdd.discussion" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
+                                <textarea ngModel class="form-control" type="text" id="contenu"  name="contenu" placeholder="contenu du rapport*" required [(ngModel)]="rapportAdd.contenu" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
 
-                                <div class="form-group">
-                                  <input ngModel class="form-control" type="text" id="lieu"  name="lieu" placeholder="lieu du reunion*" required [(ngModel)]="reunionAdd.lieu" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                                <div class="form-group">
-                                  <input ngModel class="form-control" type="date" id="date"  name="date" placeholder="date du reunion*" required [(ngModel)]="reunionAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                               <div class="form-group">
+                                  <input ngModel class="form-control" type="date" id="date"  name="date" placeholder="date du rapport*" required [(ngModel)]="rapportAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                                   <div class="form-group">
-                                    <input ngModel class="form-control" type="file" id="desicion"  name="desicion" placeholder="desicion du reunion*" required [(ngModel)]="reunionAdd.decision" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                    <input ngModel type="file"  id="filePath"  name="filePath" placeholder="vous pouvez ajouter une fichier*" required [(ngModel)]="rapportAdd.filePath" (change)="readUrl($event)" />
+                                    <iframe [src]="filePath"> </iframe>
+                                    <small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
-                           <div class="form-group">
-                            <select ngModel class="form-control" name="cellule" required [(ngModel)]="reunionAdd.cellule" id="cellule" >
-                              <option *ngFor="let cellule of cellules" >{{cellule.id}}</option>
-                            </select>
-                           <small class="form-text text-danger help-block lead"></small></div> </div>
+                            </div>
 
 
 
@@ -141,7 +141,7 @@
                             <button
 
 
-                            (click)="createReunion()"
+                            (click)="createRapport()"
                              class="btn btn-warning btn-xl text-uppercase" type="submit">Ajouter</button>
 
                              <button
@@ -157,4 +157,3 @@
 
 
   </section>
-
