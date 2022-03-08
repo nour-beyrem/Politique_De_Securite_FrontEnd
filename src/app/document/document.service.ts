@@ -26,7 +26,7 @@ export class DocumentService {
   }
 
   getDocumentByQui(qui: any): Observable<any> {
-    return this.httpClient.get(`${this.Userurl}/+"politique"/${qui}`);
+    return this.httpClient.get(`${this.Userurl}/politique/${qui}`);
   }
 
   getDocumentByType(typeChapitre: any): Observable<any> {

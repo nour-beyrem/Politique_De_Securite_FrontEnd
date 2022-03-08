@@ -154,12 +154,7 @@ deleteRapport(Pat:any) {
     }
   }
 
-  onSelectFile(event:any) {
-    if(event.target.files && event.target.files.length > 0) {
-      this.filePath = event.target.files[0];
-      this.fileInformation = null;
-    }
-  }
+
 
 
 

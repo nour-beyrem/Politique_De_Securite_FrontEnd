@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActifComponent } from './actif/actif.component';
+import { UpdateActifComponent } from './actif/update-actif/update-actif.component';
 import { AuthComponent } from './authentification/auth/auth.component';
 import { CelluleComponent } from './cellule/cellule.component';
 import { UpdateCelluleComponent } from './cellule/update-cellule/update-cellule.component';
@@ -14,6 +16,7 @@ import { ReunionCComponent } from './reunionC/reunion-c/reunion-c.component';
 import { UpdateReunionComponent } from './reunionC/update-reunion/update-reunion.component';
 import { SignatureComponent } from './user/signature/signature.component';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
+import { UserActifComponent } from './user/user-actif/user-actif.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [{path: '', component: AuthComponent},
@@ -25,10 +28,13 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'user', component:UserComponent},
 {path: 'incident', component:IncidentComponent},
 {path: 'rapport', component:RapportComponent},
+{path: 'actif', component:ActifComponent},
 {path: 'signature', component:SignatureComponent},
 {path: 'updateReunion/:id', component:UpdateReunionComponent},
+{path: 'updateActif/:id', component:UpdateActifComponent},
 {path: 'updateDocument/:id', component:UpdateDocumentComponent},
 {path: 'updateUser/:id', component:UpdateUserComponent},
+{path: 'ActifUser/:id', component:UserActifComponent},
 {path: 'updateIncident/:id', component:UpdateIncidentComponent},
 {path: 'updateRapport/:id', component:UpdateRapportComponent},];
 

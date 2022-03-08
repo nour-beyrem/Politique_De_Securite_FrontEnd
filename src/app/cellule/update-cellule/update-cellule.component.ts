@@ -39,11 +39,7 @@ export class UpdateCelluleComponent implements OnInit {
       );
   }
 
-  getById(code:any){
-    this.cellule.getCellule(code).subscribe(data=>{
-      this.celluleAdd= data;
-    });
-  }
+
 
 
 

@@ -1,1 +1,84 @@
-<p>update-actif works!</p>
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+<p></p>
+<p></p>
+<p></p>
+<p></p><p></p>
+<p></p>
+<p></p>
+<p></p>
+<div >
+    <div class="container" >
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="text-uppercase section-heading">details de l'actif' </h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <form #monFormulaire="ngForm">
+                <div class="form-row">
+                    <div class="col-md-6">
+
+
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="reference"  name="reference" placeholder="reference de l'actif*" required [(ngModel)]="actifAdd.reference" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                              <div class="form-group">
+                                <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="nom de l'actif*" required [(ngModel)]="actifAdd.nom" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="type"  name="type" placeholder="type de l'actif*" required [(ngModel)]="actifAdd.type" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                  <div class="form-group">
+                                    <input ngModel class="form-control" type="text" id="adressIP"  name="adressIP" placeholder="adresse ip de l'actif*" required [(ngModel)]="actifAdd.adresseIP" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                  <div class="form-group">
+                                    <input ngModel class="form-control" type="text" id="localisation"  name="localisation" placeholder="localisation de l'actif*" required [(ngModel)]="actifAdd.localisation" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                    <div class="form-group">
+                                      <input ngModel class="form-control" type="text" id="genre"  name="genre" placeholder="genre de l'actif*" required [(ngModel)]="actifAdd.genre" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                      <div class="form-group">
+                                        <input ngModel class="form-control" type="text" id="serveurApplication"  name="serveurApplication" placeholder="serveur d'application de l'actif*" required [(ngModel)]="actifAdd.serveurApplication" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                        <div class="form-group">
+                                          <input ngModel class="form-control" type="text" id="bd"  name="bd" placeholder="base de donnée de l'actif*" required [(ngModel)]="actifAdd.bd" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                          <div class="form-group">
+                                            <input ngModel class="form-control" type="text" id="os"  name="os" placeholder="os de l'actif*" required [(ngModel)]="actifAdd.os" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                            <div class="form-group">
+                                              <input ngModel class="form-control" type="text" id="dmia"  name="dmia" placeholder="DMIA de l'actif*" required [(ngModel)]="actifAdd.dmia" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                              <div class="form-group">
+                                                <input ngModel class="form-control" type="number" id="criticiteCID"  name="criticiteCID" placeholder="criticite CID de l'actif*" required [(ngModel)]="actifAdd.criticiteCID" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                              <div class="form-group">
+                            <select ngModel class="form-control" name="proprietaire" required [(ngModel)]="actifAdd.proprietaire.username" id="proprietaire" >
+                              <option *ngFor="let user of users" >{{user.username}}</option>
+                            </select>
+                           <small class="form-text text-danger help-block lead"></small></div>
+
+                            </div>
+
+
+
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                        <div id="success"></div>
+                        <button
+
+                        (click)="processForm()"
+
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Modifier</button>
+                         <button
+                         (click)="Annuler()"
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                    </div>
+                  </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    </div>
+
+

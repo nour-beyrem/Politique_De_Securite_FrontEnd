@@ -27,6 +27,7 @@ import { UpdateActifComponent } from './actif/update-actif/update-actif.componen
 import { RapportComponent } from './rapport/rapport.component';
 import { UpdateRapportComponent } from './rapport/update-rapport/update-rapport.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { UserActifComponent } from './user/user-actif/user-actif.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     UpdateActifComponent,
     RapportComponent,
     UpdateRapportComponent,
+    UserActifComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { ActifService } from './../actif/actif.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -14,6 +15,7 @@ import { UserSService } from './user-s.service';
 export class UserComponent implements OnInit {
 
   personels:any
+  actifs:any
   id:string="";
   auth:any;
   role :string="rece"

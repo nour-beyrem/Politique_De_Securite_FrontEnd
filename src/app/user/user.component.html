@@ -81,6 +81,8 @@
 
                     <th>
                       <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateUser',personel.username]"> update</button>
+                      <button type="button" class="btn btn-outline-secondary" [routerLink]="['/ActifUser',personel.username]"> Actif</button>
+
                       <button type="button" class="btn btn-outline-secondary" (click)="deletePersonel(personel.username)"> delete</button>
                   </th>
 
@@ -160,7 +162,7 @@
                                               </div>
                                               <div>
                                                     <input type="checkbox" id="sortie" name="sortie" value="personelAdd.sortie"  required [(ngModel)]="personelAdd.sortie">
-                                                    <label for="sortie">Est ce qu'il existe encore ?</label>
+                                                    <label for="sortie">sortie ?</label>
                                                   </div>
 
                                                 </div>

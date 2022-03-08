@@ -26,11 +26,11 @@ export class UserSService {
   }
 
   getUserByRole(role: any): Observable<any> {
-    return this.httpClient.get(`${this.Userurl}/+"role"/${role}`);
+    return this.httpClient.get(`${this.Userurl}/role/${role}`);
   }
 
   getUserBySortie(sortie: any): Observable<any> {
-    return this.httpClient.get(`${this.Userurl}/+"sortie"/${sortie}`);
+    return this.httpClient.get(`${this.Userurl}/sortie/${sortie}`);
   }
 
   createUser(data: any): Observable<any> {
