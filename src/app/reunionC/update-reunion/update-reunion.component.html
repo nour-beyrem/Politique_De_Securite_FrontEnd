@@ -37,7 +37,11 @@
                             <input ngModel class="form-control" type="text" id="lieu"  name="lieu" placeholder="lieu du reunion*" required [(ngModel)]="reunionAdd.lieu" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                           <div class="form-group">
                             <input ngModel class="form-control" type="text" id="date"  name="date" placeholder="date du reunion*" required [(ngModel)]="reunionAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-
+                            <div class="form-group">
+                              <select ngModel class="form-control" name="cellule" required [(ngModel)]="reunionAdd.cellule.id" id="cellule" >
+                                <option *ngFor="let cellule of cellules" >{{cellule.id}}</option>
+                              </select>
+                             <small class="form-text text-danger help-block lead"></small></div>
                             <div class="form-group">
                               <iframe [src]= "decision" width="50%" height="250px"> </iframe>
                               <input ngModel class="form-control" type="file" id="desicion"  name="decision" placeholder="decision du reunion*" required [(ngModel)]="reunionAdd.decision" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>

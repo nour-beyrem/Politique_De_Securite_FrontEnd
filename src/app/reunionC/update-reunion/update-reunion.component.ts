@@ -16,8 +16,9 @@ export class UpdateReunionComponent implements OnInit {
   reunionAdd :any;
   user:any;
   decision:any
+  cellules:any
 
-  constructor(private sanitizer: DomSanitizer,public router: Router,  private toaster: ToastrService,private activatedRoute:ActivatedRoute,private reunion:ReunionService, private celluleService : CelluleService) { }
+  constructor(private cellule:CelluleService,private sanitizer: DomSanitizer,public router: Router,  private toaster: ToastrService,private activatedRoute:ActivatedRoute,private reunion:ReunionService, private celluleService : CelluleService) { }
 
   ngOnInit(): void {
 
@@ -41,6 +42,16 @@ export class UpdateReunionComponent implements OnInit {
       }
 
       );
+
+      this.cellule.getCellules().subscribe((result:any)=>{
+        console.log(result)
+        this.cellules=result
+      },
+      (error)=>{
+       alert('error')
+      }
+
+      )
   }
 
   getById(code:any){

@@ -28,6 +28,8 @@ import { RapportComponent } from './rapport/rapport.component';
 import { UpdateRapportComponent } from './rapport/update-rapport/update-rapport.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { UserActifComponent } from './user/user-actif/user-actif.component';
+import { ProgrammeComponent } from './programme/programme.component';
+import { UpdateProgrammeComponent } from './programme/update-programme/update-programme.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { UserActifComponent } from './user/user-actif/user-actif.component';
     RapportComponent,
     UpdateRapportComponent,
     UserActifComponent,
+    ProgrammeComponent,
+    UpdateProgrammeComponent,
   ],
   imports: [
     BrowserModule,

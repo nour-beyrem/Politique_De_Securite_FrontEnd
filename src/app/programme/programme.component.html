@@ -1,0 +1,168 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top " id="mainNav">
+  <div class="container"><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto text-uppercase">
+            <li class="nav-item">
+              <a
+
+                class="nav-link"
+                routerLinkActive="active text-primary"
+                (click)="home()"
+              >
+                <b> Acceuil</b>
+              </a>
+            </li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/programme#list">Nos Programme</a></li>
+            <li class="nav-item"></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/programme#ajouter">Ajout Programme</a></li>
+              <li class="nav-item"></li>
+
+
+
+
+              <li class="nav-item">
+                <a
+                  *ngIf="authService.isAuthenticated()"
+                  class="nav-link"
+                  routerLinkActive="active text-primary"
+                  (click)="logout()"
+                >
+                  <b> Logout</b>
+                </a>
+              </li>
+              <li class="nav-item"></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+
+
+
+  <!-- team section -->
+
+ <section class="bg-light" id="list">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Liste Des Programmes</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+              <table class="table" id='programme' >
+                <thead class="thead-dark" type="color" value="#123456" >
+                    <tr >
+                        <th>ID</th>
+                        <th>theme</th>
+                        <th>Sujet </th>
+                        <th>Lieu</th>
+                        <th>Date</th>
+                        <th>Traitement</th>
+
+
+
+
+                    </tr>
+                </thead>
+                <tr *ngFor="let programme of programmes ">
+                    <th>{{programme.id}}</th>
+                    <th>{{programme.theme}}</th>
+                    <th>{{programme.sujetPlotique}}</th>
+                    <th>{{programme.lieu}}</th>
+                    <th>{{programme.Date | date}}</th>
+
+
+                    <th>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateProgramme',programme.id]"> update</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteProgramme(programme.id)"> delete</button>
+                  </th>
+
+                </tr>
+            </table>
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+
+  <section class="bg-light" id="ajouter">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Ajouter un Programme de sensibilisation</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <form #monFormulaire="ngForm">
+                    <div class="form-row">
+                        <div class="col-md-6">
+
+
+
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="theme"  name="theme" placeholder="theme du programme*" required [(ngModel)]="programmeAdd.theme" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                              <div class="form-group">
+                                <input ngModel class="form-control" type="text" id="sujetPolitique"  name="sujetPolitique" placeholder="sujet du Politique du programme*" required [(ngModel)]="programmeAdd.sujetPlotique" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="duree"  name="duree" placeholder="duree du programme*" required [(ngModel)]="programmeAdd.duree" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                  <div class="form-group">
+                                    <input ngModel class="form-control" type="text" id="lieu"  name="lieu" placeholder="lieu du programme*" required [(ngModel)]="programmeAdd.lieu" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                    <div class="form-group">
+                                      <input ngModel class="form-control" type="Date" id="Date"  name="Date" placeholder="Date du programme*" required [(ngModel)]="programmeAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                      <div class="form-group">
+                                        <input ngModel class="form-control" type="text" id="etat"  name="etat" placeholder="etat du programme*" required [(ngModel)]="programmeAdd.etat" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                        <div class="form-group">
+                                          <textarea ngModel class="form-control" type="text" id="publicConcerne"  name="publicConcerne" placeholder="public Concerne du programme*" required [(ngModel)]="programmeAdd.publicConcerne" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
+
+                            <div class="form-group">
+                              <textarea ngModel class="form-control" type="text" id="pv"  name="pv" placeholder="pv du programme*" required [(ngModel)]="programmeAdd.pv" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
+                              <div class="form-group">
+                                <input ngModel class="form-control" type="file" id="presence"  name="presence" placeholder="liste de presence du programme*" required [(ngModel)]="programmeAdd.presence" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+                            </div>
+
+
+
+
+
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                            <div id="success"></div>
+                            <button
+
+
+                            (click)="createProgramme()"
+                             class="btn btn-warning btn-xl text-uppercase" type="submit">Ajouter</button>
+
+                             <button
+                             (click)="Annuler()"
+                             class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                        </div>
+                      </div>
+                </form>
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+
+
