@@ -12,6 +12,8 @@ import { IncidentComponent } from './incident/incident.component';
 import { UpdateIncidentComponent } from './incident/update-incident/update-incident.component';
 import { InformationComponent } from './information/information.component';
 import { UpdateInformationComponent } from './information/update-information/update-information.component';
+import { PerimetreComponent } from './perimetre/perimetre.component';
+import { UpdatePerimetreComponent } from './perimetre/update-perimetre/update-perimetre.component';
 import { ProgrammeComponent } from './programme/programme.component';
 import { UpdateProgrammeComponent } from './programme/update-programme/update-programme.component';
 import { RapportComponent } from './rapport/rapport.component';
@@ -35,9 +37,11 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'actif', component:ActifComponent},
 {path: 'signature', component:SignatureComponent},
 {path: 'information', component:InformationComponent},
+{path: 'perimetre', component:PerimetreComponent},
 {path: 'programme', component:ProgrammeComponent},
 {path: 'updateReunion/:id', component:UpdateReunionComponent},
 {path: 'updateActif/:id', component:UpdateActifComponent},
+{path: 'updatePerimetre/:id', component:UpdatePerimetreComponent},
 {path: 'updateDocument/:id', component:UpdateDocumentComponent},
 {path: 'updateInformation/:id', component:UpdateInformationComponent},
 {path: 'updateUser/:id', component:UpdateUserComponent},

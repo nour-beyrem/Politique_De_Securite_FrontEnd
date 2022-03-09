@@ -32,6 +32,8 @@ import { ProgrammeComponent } from './programme/programme.component';
 import { UpdateProgrammeComponent } from './programme/update-programme/update-programme.component';
 import { InformationComponent } from './information/information.component';
 import { UpdateInformationComponent } from './information/update-information/update-information.component';
+import { PerimetreComponent } from './perimetre/perimetre.component';
+import { UpdatePerimetreComponent } from './perimetre/update-perimetre/update-perimetre.component';
 
 
 @NgModule({
@@ -60,6 +62,8 @@ import { UpdateInformationComponent } from './information/update-information/upd
     UpdateProgrammeComponent,
     InformationComponent,
     UpdateInformationComponent,
+    PerimetreComponent,
+    UpdatePerimetreComponent,
   ],
   imports: [
     BrowserModule,
