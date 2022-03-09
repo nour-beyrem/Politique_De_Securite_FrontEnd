@@ -1,0 +1,170 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top " id="mainNav">
+  <div class="container"><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto text-uppercase">
+            <li class="nav-item">
+              <a
+
+                class="nav-link"
+                routerLinkActive="active text-primary"
+                (click)="home()"
+              >
+                <b> Acceuil</b>
+              </a>
+            </li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/information#list">Informations</a></li>
+              <li class="nav-item"></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/information#ajouter">Ajout Information</a></li>
+              <li class="nav-item"></li>
+
+
+              <li class="nav-item">
+                <a
+                  *ngIf="authService.isAuthenticated()"
+                  class="nav-link"
+                  routerLinkActive="active text-primary"
+                  (click)="logout()"
+                >
+                  <b> Logout</b>
+                </a>
+              </li>
+              <li class="nav-item"></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+
+
+
+  <!-- team section -->
+  <section class="bg-light" id="list">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Liste Des Informations</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+              <table class="table" id='information' >
+                <thead class="thead-dark" type="color" value="#123456" >
+                    <tr >
+                        <th>ID</th>
+                        <th>Reference</th>
+                        <th>Criticite cid </th>
+                        <th>Criticite business</th>
+                        <th>Marquage</th>
+                        <th>Traitement</th>
+
+
+
+
+
+                    </tr>
+                </thead>
+                <tr *ngFor="let information of informations ">
+                  <th>{{information.id}}</th>
+                    <th>{{information.reference}}</th>
+                    <th>{{information.criticiteCID}}</th>
+                    <th>{{information.criticiteBUSINESS}}</th>
+                    <th>{{information.marquage}}</th>
+
+
+
+                    <th>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateInformation',information.id]"> update</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteInformation(information.id)"> delete</button>
+                  </th>
+
+                </tr>
+            </table>
+
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+  <section class="bg-light" id="ajouter">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Ajouter une information</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <form #monFormulaire="ngForm">
+                    <div class="form-row">
+                        <div class="col-md-6">
+
+
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="reference"  name="reference" placeholder="reference de l'information*" required [(ngModel)]="informationAdd.reference" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                              <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="criticiteCID"  name="criticiteCID" placeholder="ccriticite CID de l'information*" required [(ngModel)]="informationAdd.criticiteCID" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="criticiteBUSINESS"  name="criticiteBUSINESS" placeholder="criticite BUSINESS de l'information*" required [(ngModel)]="informationAdd.criticiteBUSINESS" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                  <div class="form-group">
+                                    <input ngModel class="form-control" type="text" id="marquage"  name="marquage" placeholder="marquage fe l'information*" required [(ngModel)]="informationAdd.marquage" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                  <div class="col-lg-12 text-center">
+                                    <div id="success"></div>
+
+                                </div>
+
+                                </div>
+                                  <div class="col-md-6">
+                                   <div class="clearfix"></div>
+                                      <div class="col-lg-12 text-center">
+                                          <div id="success"></div>
+                                          <button
+
+
+                                          (click)="Prediction()"
+                                           class="btn btn-warning btn-xl text-uppercase" type="submit">Predir</button>
+
+                                          <button
+
+
+                                          (click)="createInformation()"
+                                           class="btn btn-warning btn-xl text-uppercase" type="submit">Ajouter</button>
+
+                                           <button
+                                           (click)="Annuler()"
+                                           class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                                      </div>
+                                                      </div>
+
+
+
+
+
+
+                      </div>
+                </form>
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+
+

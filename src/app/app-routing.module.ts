@@ -10,6 +10,8 @@ import { UpdateDocumentComponent } from './document/update-document/update-docum
 import { HomeResComponent } from './home-res/home-res.component';
 import { IncidentComponent } from './incident/incident.component';
 import { UpdateIncidentComponent } from './incident/update-incident/update-incident.component';
+import { InformationComponent } from './information/information.component';
+import { UpdateInformationComponent } from './information/update-information/update-information.component';
 import { ProgrammeComponent } from './programme/programme.component';
 import { UpdateProgrammeComponent } from './programme/update-programme/update-programme.component';
 import { RapportComponent } from './rapport/rapport.component';
@@ -32,10 +34,12 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'rapport', component:RapportComponent},
 {path: 'actif', component:ActifComponent},
 {path: 'signature', component:SignatureComponent},
+{path: 'information', component:InformationComponent},
 {path: 'programme', component:ProgrammeComponent},
 {path: 'updateReunion/:id', component:UpdateReunionComponent},
 {path: 'updateActif/:id', component:UpdateActifComponent},
 {path: 'updateDocument/:id', component:UpdateDocumentComponent},
+{path: 'updateInformation/:id', component:UpdateInformationComponent},
 {path: 'updateUser/:id', component:UpdateUserComponent},
 {path: 'updateProgramme/:id', component:UpdateProgrammeComponent},
 {path: 'ActifUser/:id', component:UserActifComponent},

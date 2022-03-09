@@ -66,7 +66,7 @@ export class UpdateIncidentComponent implements OnInit {
 
   }
   Annuler(){
-    this.router.navigate(['cellule']);
+    this.router.navigate(['incident']);
   }
 
 }

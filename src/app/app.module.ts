@@ -30,6 +30,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { UserActifComponent } from './user/user-actif/user-actif.component';
 import { ProgrammeComponent } from './programme/programme.component';
 import { UpdateProgrammeComponent } from './programme/update-programme/update-programme.component';
+import { InformationComponent } from './information/information.component';
+import { UpdateInformationComponent } from './information/update-information/update-information.component';
 
 
 @NgModule({
@@ -56,6 +58,8 @@ import { UpdateProgrammeComponent } from './programme/update-programme/update-pr
     UserActifComponent,
     ProgrammeComponent,
     UpdateProgrammeComponent,
+    InformationComponent,
+    UpdateInformationComponent,
   ],
   imports: [
     BrowserModule,
