@@ -20,6 +20,8 @@ import { RapportComponent } from './rapport/rapport.component';
 import { UpdateRapportComponent } from './rapport/update-rapport/update-rapport.component';
 import { ReunionCComponent } from './reunionC/reunion-c/reunion-c.component';
 import { UpdateReunionComponent } from './reunionC/update-reunion/update-reunion.component';
+import { SortieComponent } from './sortie/sortie.component';
+import { UpdateSortieComponent } from './sortie/update-sortie/update-sortie.component';
 import { SignatureComponent } from './user/signature/signature.component';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
 import { UserActifComponent } from './user/user-actif/user-actif.component';
@@ -35,11 +37,13 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'incident', component:IncidentComponent},
 {path: 'rapport', component:RapportComponent},
 {path: 'actif', component:ActifComponent},
+{path: 'sortie', component:SortieComponent},
 {path: 'signature', component:SignatureComponent},
 {path: 'information', component:InformationComponent},
 {path: 'perimetre', component:PerimetreComponent},
 {path: 'programme', component:ProgrammeComponent},
 {path: 'updateReunion/:id', component:UpdateReunionComponent},
+{path: 'updateSortie/:id', component:UpdateSortieComponent},
 {path: 'updateActif/:id', component:UpdateActifComponent},
 {path: 'updatePerimetre/:id', component:UpdatePerimetreComponent},
 {path: 'updateDocument/:id', component:UpdateDocumentComponent},

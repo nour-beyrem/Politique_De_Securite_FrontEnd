@@ -34,6 +34,8 @@ import { InformationComponent } from './information/information.component';
 import { UpdateInformationComponent } from './information/update-information/update-information.component';
 import { PerimetreComponent } from './perimetre/perimetre.component';
 import { UpdatePerimetreComponent } from './perimetre/update-perimetre/update-perimetre.component';
+import { SortieComponent } from './sortie/sortie.component';
+import { UpdateSortieComponent } from './sortie/update-sortie/update-sortie.component';
 
 
 @NgModule({
@@ -64,6 +66,8 @@ import { UpdatePerimetreComponent } from './perimetre/update-perimetre/update-pe
     UpdateInformationComponent,
     PerimetreComponent,
     UpdatePerimetreComponent,
+    SortieComponent,
+    UpdateSortieComponent,
   ],
   imports: [
     BrowserModule,
