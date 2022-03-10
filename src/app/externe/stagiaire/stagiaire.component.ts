@@ -80,7 +80,7 @@ export class StagiaireComponent implements OnInit {
       this.externes=result
     },
     (error)=>{
-     alert('error')
+     alert('vous n avez pas le droit de consulter la liste de tous les stagiaire, vous pouvez seuleument signer')
     }
 
     )

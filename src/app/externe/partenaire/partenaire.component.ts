@@ -80,7 +80,7 @@ export class PartenaireComponent implements OnInit {
       this.externes=result
     },
     (error)=>{
-     alert('error')
+     alert('vous n avez pas le droit de consulter la liste de tous les partenaire, vous pouvez seuleument signer')
     }
 
     )
@@ -161,7 +161,7 @@ recherche(){
     this.externes=result
   },
   (error)=>{
-   alert('error')
+   alert('vous n avez pas le droit de consulter la liste de tous les partenaire, vous pouvez seuleument signer')
   }
 
   )
