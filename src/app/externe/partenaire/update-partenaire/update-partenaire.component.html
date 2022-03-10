@@ -1,0 +1,82 @@
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+<p></p>
+<p></p>
+<p></p>
+<p></p><p></p>
+<p></p>
+<p></p>
+<p></p>
+<div >
+    <div class="container" >
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="text-uppercase section-heading">details du partenaire </h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <form #monFormulaire="ngForm">
+                <div class="form-row">
+
+
+                  <div class="col-md-6">
+
+
+                    <div class="form-group">
+                      <input ngModel class="form-control" type="text" id="ref"  name="ref" placeholder="reference*" required [(ngModel)]="externeAdd.ref" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                      <div class="form-group">
+                        <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="nom *" required [(ngModel)]="externeAdd.nom" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                        <div class="form-group">
+                          <input ngModel class="form-control" type="text" id="prenom"  name="prenom" placeholder="prenom*" required [(ngModel)]="externeAdd.prenom" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                          <div class="form-group">
+                            <input ngModel class="form-control" type="text" id="intervenant"  name="intervenant" placeholder="intervenant*" required [(ngModel)]="externeAdd.intervenant" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                          <div class="form-group">
+                            <input ngModel class="form-control" type="text" id="raisonSocial"  name="raisonSocial" placeholder="raison Social*" required [(ngModel)]="externeAdd.raisonSocial" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="responsable"  name="responsable" placeholder="responsable*" required [(ngModel)]="externeAdd.responsable" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                              <div class="form-group">
+                                <input ngModel class="form-control" type="text" id="domaine"  name="domaine" placeholder="domaine*" required [(ngModel)]="externeAdd.domaine" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="email"  name="email" placeholder="email*" required [(ngModel)]="externeAdd.email" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                  <div class="form-group">
+                                    <input ngModel class="form-control" type="text" id="os"  name="telephone" placeholder="telephone*" required [(ngModel)]="externeAdd.tel" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                                        <div class="form-group">
+                                          <iframe [src]= "charte" width="50%" height="250px"> </iframe>
+                      </div>
+                                                <div>
+                                                              <input type="checkbox" id="charte" name="charte" value="externeAdd.charte"  required  [(ngModel)]="externeAdd.charte">
+                                                              <label for="charte">J'accepte ce que le charte d'engagement dit ?</label>
+                                                            </div>
+
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                        <div id="success"></div>
+                        <button
+
+                        (click)="processForm()"
+
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Modifier</button>
+                         <button
+                         (click)="Annuler()"
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                    </div>
+                  </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    </div>
+

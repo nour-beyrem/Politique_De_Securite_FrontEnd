@@ -55,7 +55,7 @@
 
                      <div class="form-group">
                       <select ngModel class="form-control" name="responsable" required [(ngModel)]="sortieAdd.responsable.username" id="responsable" >
-                        <option *ngFor="let user of users" >{{user.username}}</option>
+                        <option *ngFor="let user of partenaire" >{{user.id}}</option>
                       </select>
                      <small class="form-text text-danger help-block lead"></small></div>
 

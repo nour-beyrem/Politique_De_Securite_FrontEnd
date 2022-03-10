@@ -7,6 +7,10 @@ import { CelluleComponent } from './cellule/cellule.component';
 import { UpdateCelluleComponent } from './cellule/update-cellule/update-cellule.component';
 import { DocumentComponent } from './document/document.component';
 import { UpdateDocumentComponent } from './document/update-document/update-document.component';
+import { PartenaireComponent } from './externe/partenaire/partenaire.component';
+import { UpdatePartenaireComponent } from './externe/partenaire/update-partenaire/update-partenaire.component';
+import { StagiaireComponent } from './externe/stagiaire/stagiaire.component';
+import { UpdateStagiaireComponent } from './externe/stagiaire/update-stagiaire/update-stagiaire.component';
 import { HomeResComponent } from './home-res/home-res.component';
 import { IncidentComponent } from './incident/incident.component';
 import { UpdateIncidentComponent } from './incident/update-incident/update-incident.component';
@@ -36,6 +40,8 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'user', component:UserComponent},
 {path: 'incident', component:IncidentComponent},
 {path: 'rapport', component:RapportComponent},
+{path: 'partenaire', component:PartenaireComponent},
+{path: 'stagiaire', component:StagiaireComponent},
 {path: 'actif', component:ActifComponent},
 {path: 'sortie', component:SortieComponent},
 {path: 'signature', component:SignatureComponent},
@@ -46,6 +52,8 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'updateSortie/:id', component:UpdateSortieComponent},
 {path: 'updateActif/:id', component:UpdateActifComponent},
 {path: 'updatePerimetre/:id', component:UpdatePerimetreComponent},
+{path: 'updateStagiaire/:id', component:UpdateStagiaireComponent},
+{path: 'updatePartenaire/:id', component:UpdatePartenaireComponent},
 {path: 'updateDocument/:id', component:UpdateDocumentComponent},
 {path: 'updateInformation/:id', component:UpdateInformationComponent},
 {path: 'updateUser/:id', component:UpdateUserComponent},

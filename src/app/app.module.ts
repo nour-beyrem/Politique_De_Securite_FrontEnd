@@ -36,6 +36,12 @@ import { PerimetreComponent } from './perimetre/perimetre.component';
 import { UpdatePerimetreComponent } from './perimetre/update-perimetre/update-perimetre.component';
 import { SortieComponent } from './sortie/sortie.component';
 import { UpdateSortieComponent } from './sortie/update-sortie/update-sortie.component';
+import { ExterneComponent } from './externe/externe.component';
+import { UpdateExterneComponent } from './externe/update-externe/update-externe.component';
+import { PartenaireComponent } from './externe/partenaire/partenaire.component';
+import { StagiaireComponent } from './externe/stagiaire/stagiaire.component';
+import { UpdatePartenaireComponent } from './externe/partenaire/update-partenaire/update-partenaire.component';
+import { UpdateStagiaireComponent } from './externe/stagiaire/update-stagiaire/update-stagiaire.component';
 
 
 @NgModule({
@@ -68,6 +74,12 @@ import { UpdateSortieComponent } from './sortie/update-sortie/update-sortie.comp
     UpdatePerimetreComponent,
     SortieComponent,
     UpdateSortieComponent,
+    ExterneComponent,
+    UpdateExterneComponent,
+    PartenaireComponent,
+    StagiaireComponent,
+    UpdatePartenaireComponent,
+    UpdateStagiaireComponent,
   ],
   imports: [
     BrowserModule,

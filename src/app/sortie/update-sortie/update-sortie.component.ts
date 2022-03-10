@@ -1,3 +1,4 @@
+import { ExterneService } from './../../externe/externe.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -20,8 +21,10 @@ export class UpdateSortieComponent implements OnInit {
   userA:any;
   userR:any
   actifS:any
+  partenaire:any
+  type:string="partenaire"
 
-  constructor(public router: Router,  private toaster: ToastrService,private activatedRoute:ActivatedRoute,private actif:ActifService, private userService : UserAuthService, private sortie:SortieService) { }
+  constructor(private externe:ExterneService,public router: Router,  private toaster: ToastrService,private activatedRoute:ActivatedRoute,private actif:ActifService, private userService : UserAuthService, private sortie:SortieService) { }
 
   ngOnInit(): void {
 
@@ -55,6 +58,16 @@ this.actifS=this.sortieAdd.actifS.id
       }
 
       );
+
+      this.externe.getExterneByType(this.type).subscribe((result:any)=>{
+        console.log(result)
+        this.partenaire=result
+      },
+      (error)=>{
+       alert('error')
+      }
+
+      )
 
 
       this.actif.getActifs().subscribe((result:any)=>{

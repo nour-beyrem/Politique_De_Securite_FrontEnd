@@ -1,3 +1,4 @@
+import { ExterneService } from './../externe/externe.service';
 import { ActifService } from './../actif/actif.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -24,6 +25,8 @@ export class SortieComponent implements OnInit {
   username:any
   nom:any
   prenom:any
+  partenaire:any
+  type:string="partenaire"
 
   sortieAdd = {
     createdAt:'',
@@ -45,7 +48,7 @@ export class SortieComponent implements OnInit {
   };
   submitted = false;
 
-  constructor(private sortie:SortieService, private actif:ActifService,private userService : UserAuthService,public router: Router,private toaster: ToastrService,
+  constructor(private externe:ExterneService,private sortie:SortieService, private actif:ActifService,private userService : UserAuthService,public router: Router,private toaster: ToastrService,
     private activatedRoute: ActivatedRoute,public authService:AuthService,private token: TokenService) { }
 
   ngOnInit(): void {
@@ -74,7 +77,19 @@ this.userService.getUsers().subscribe((result:any)=>{
  alert('error')
 }
 
+
+
 );
+
+this.externe.getExterneByType(this.type).subscribe((result:any)=>{
+  console.log(result)
+  this.partenaire=result
+},
+(error)=>{
+ alert('error')
+}
+
+)
 
 this.actif.getActifs().subscribe((result:any)=>{
 
