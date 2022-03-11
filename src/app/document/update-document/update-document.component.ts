@@ -29,7 +29,7 @@ export class UpdateDocumentComponent implements OnInit {
 
       this.document.getDocument(this.id).subscribe((result:any)=>{
 
-       this.documentAdd=result;
+       this.documentAdd=result[0];
 
 
        this.support = this.sanitizer.bypassSecurityTrustResourceUrl(this.documentAdd.document);

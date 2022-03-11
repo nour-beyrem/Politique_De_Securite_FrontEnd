@@ -29,7 +29,7 @@ export class UpdateRapportComponent implements OnInit {
 
       this.rapport.getRapport(this.id).subscribe((result:any)=>{
 
-       this.rapportAdd=result;
+       this.rapportAdd=result[0];
 
 
        this.filePath = this.sanitizer.bypassSecurityTrustResourceUrl(this.rapportAdd.filePath);

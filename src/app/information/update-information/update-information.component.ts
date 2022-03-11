@@ -28,7 +28,7 @@ export class UpdateInformationComponent implements OnInit {
 
       this.information.getInformation(this.id).subscribe((result:any)=>{
 
-       this.informationAdd=result;
+       this.informationAdd=result[0];
        console.log(result)
       },
       (error)=>{

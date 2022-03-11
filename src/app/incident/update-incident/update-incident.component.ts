@@ -29,7 +29,7 @@ export class UpdateIncidentComponent implements OnInit {
 
       this.incident.getIncident(this.id).subscribe((result:any)=>{
 
-       this.incidentAdd=result;
+       this.incidentAdd=result[0];
        console.log(result)
       },
       (error)=>{

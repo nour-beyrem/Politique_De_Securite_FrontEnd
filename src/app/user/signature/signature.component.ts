@@ -28,7 +28,7 @@ export class SignatureComponent implements OnInit {
     this.username=this.token.getInfos().username
       this.personel.getUser(this.username).subscribe((result:any)=>{
 
-        this.personelAdd=result;
+        this.personelAdd=result[0];
 
         console.log('nou',this.personelAdd)
 
@@ -67,7 +67,7 @@ export class SignatureComponent implements OnInit {
     this.personel.updateUser(this.personelAdd.username,this.personelAdd).subscribe(
       (personel)=>{
         this.toaster.success(
-          `personel a été modifier avec succès`
+          `votre signature a ete enregistrer`
         );
         this.router.navigate(['homeAgent']);
       },

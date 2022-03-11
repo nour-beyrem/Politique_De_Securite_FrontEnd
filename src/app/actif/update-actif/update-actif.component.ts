@@ -30,7 +30,7 @@ export class UpdateActifComponent implements OnInit {
 
       this.actif.getActif(this.id).subscribe((result:any)=>{
 
-       this.actifAdd=result;
+       this.actifAdd=result[0];
 this.user=this.actifAdd.proprietaire.username
        console.log(result)
       },

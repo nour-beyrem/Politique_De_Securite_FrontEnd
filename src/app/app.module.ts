@@ -42,6 +42,10 @@ import { PartenaireComponent } from './externe/partenaire/partenaire.component';
 import { StagiaireComponent } from './externe/stagiaire/stagiaire.component';
 import { UpdatePartenaireComponent } from './externe/partenaire/update-partenaire/update-partenaire.component';
 import { UpdateStagiaireComponent } from './externe/stagiaire/update-stagiaire/update-stagiaire.component';
+import { AutorisationComponent } from './autorisation/autorisation.component';
+import { UpdateAutorisationComponent } from './autorisation/update-autorisation/update-autorisation.component';
+import { ConfirmationlistComponent } from './autorisation/confirmationlist/confirmationlist.component';
+import { ConfirmationComponent } from './autorisation/confirmation/confirmation.component';
 
 
 @NgModule({
@@ -80,6 +84,10 @@ import { UpdateStagiaireComponent } from './externe/stagiaire/update-stagiaire/u
     StagiaireComponent,
     UpdatePartenaireComponent,
     UpdateStagiaireComponent,
+    AutorisationComponent,
+    UpdateAutorisationComponent,
+    ConfirmationlistComponent,
+    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,

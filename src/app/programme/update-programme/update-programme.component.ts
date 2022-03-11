@@ -29,7 +29,7 @@ export class UpdateProgrammeComponent implements OnInit {
 
       this.programme.getProgramme(this.id).subscribe((result:any)=>{
 
-       this.programmeAdd=result;
+       this.programmeAdd=result[0];
 
 
        this.support = this.sanitizer.bypassSecurityTrustResourceUrl(this.programmeAdd.presence);

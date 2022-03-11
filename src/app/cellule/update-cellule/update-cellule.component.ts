@@ -29,7 +29,7 @@ export class UpdateCelluleComponent implements OnInit {
 
       this.cellule.getCellule(this.id).subscribe((result:any)=>{
 
-       this.celluleAdd=result;
+       this.celluleAdd=result[0];
        console.log(result)
       },
       (error)=>{

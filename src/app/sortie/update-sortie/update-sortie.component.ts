@@ -37,7 +37,7 @@ export class UpdateSortieComponent implements OnInit {
 
       this.sortie.getSortie(this.id).subscribe((result:any)=>{
 
-       this.sortieAdd=result;
+       this.sortieAdd=result[0];
 this.userA=this.sortieAdd.agentS.username
 this.userR=this.sortieAdd.responsable.username
 this.actifS=this.sortieAdd.actifS.id

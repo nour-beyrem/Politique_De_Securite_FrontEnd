@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActifComponent } from './actif/actif.component';
 import { UpdateActifComponent } from './actif/update-actif/update-actif.component';
 import { AuthComponent } from './authentification/auth/auth.component';
+import { AutorisationComponent } from './autorisation/autorisation.component';
+import { UpdateAutorisationComponent } from './autorisation/update-autorisation/update-autorisation.component';
 import { CelluleComponent } from './cellule/cellule.component';
 import { UpdateCelluleComponent } from './cellule/update-cellule/update-cellule.component';
 import { DocumentComponent } from './document/document.component';
@@ -48,7 +50,9 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'information', component:InformationComponent},
 {path: 'perimetre', component:PerimetreComponent},
 {path: 'programme', component:ProgrammeComponent},
+{path: 'autorisation', component:AutorisationComponent},
 {path: 'updateReunion/:id', component:UpdateReunionComponent},
+{path: 'updateAutorisation/:id', component:UpdateAutorisationComponent},
 {path: 'updateSortie/:id', component:UpdateSortieComponent},
 {path: 'updateActif/:id', component:UpdateActifComponent},
 {path: 'updatePerimetre/:id', component:UpdatePerimetreComponent},

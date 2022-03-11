@@ -154,7 +154,17 @@ export class StagiaireComponent implements OnInit {
 }
 
 
+Recherche(){
+  this.externe.getExterne(this.id).subscribe((result:any)=>{
+    console.log(result)
+    this.externes=result
+  },
+  (error)=>{
+   alert('vous n avez pas le droit de consulter la liste de tous les stagiaire, vous pouvez seuleument signer')
+  }
 
+  )
+}
 
 Annuler(){
   this.externeAdd={

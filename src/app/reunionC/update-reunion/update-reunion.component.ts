@@ -31,7 +31,7 @@ export class UpdateReunionComponent implements OnInit {
 
       this.reunion.getReunion(this.id).subscribe((result:any)=>{
 
-       this.reunionAdd=result;
+       this.reunionAdd=result[0];
 
 
        this.decision = this.sanitizer.bypassSecurityTrustResourceUrl(this.reunionAdd.decision);

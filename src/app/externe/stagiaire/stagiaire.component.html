@@ -126,6 +126,15 @@
           </div>
           <div class="row">
               <div class="col-lg-12">
+                <div class="form-group">
+                  <input ngModel class="form-control" type="text" id="id"  name="id" placeholder="id *" required [(ngModel)]="id" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                <button
+
+
+                (click)="Recherche()"
+                 class="btn btn-warning btn-xl text-uppercase" type="submit">Ajouter</button>
+
                 <table class="table" id='partenaire' >
                   <thead class="thead-dark" type="color" value="#123456" >
                       <tr >

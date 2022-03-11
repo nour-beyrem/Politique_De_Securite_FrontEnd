@@ -31,7 +31,7 @@ export class UpdateStagiaireComponent implements OnInit {
       });
       this.externe.getExterne(this.id).subscribe((result:any)=>{
 
-        this.externeAdd=result;
+        this.externeAdd=result[0];
 
         console.log('nou',this.externeAdd)
 

@@ -44,17 +44,7 @@ export class CelluleComponent implements OnInit {
     this.username=this.token.getInfos().username;
 
 
- this.userService.getbyid(this.user,this.username).subscribe((result:any)=>{
 
-  this.user=result
-  this.prenom=this.user.prenom;
-  this.nom=this.user.nom;
-},
-(error)=>{
- alert('error')
-}
-
-);
 
 this.userService.getUsers().subscribe((result:any)=>{
 

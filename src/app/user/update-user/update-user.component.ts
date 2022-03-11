@@ -27,7 +27,7 @@ export class UpdateUserComponent implements OnInit {
       });
       this.personel.getUser(this.username).subscribe((result:any)=>{
 
-        this.personelAdd=result;
+        this.personelAdd=result[0];
 
         console.log('nou',this.personelAdd)
 

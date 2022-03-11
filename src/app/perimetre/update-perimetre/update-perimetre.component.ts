@@ -30,7 +30,7 @@ export class UpdatePerimetreComponent implements OnInit {
 
       this.perimetre.getPerimetre(this.id).subscribe((result:any)=>{
 
-       this.perimetreAdd=result;
+       this.perimetreAdd=result[0];
 this.user=this.perimetreAdd.proprietaire.username
        console.log(result)
       },
