@@ -1,0 +1,88 @@
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+<p></p>
+<p></p>
+<p></p>
+<p></p><p></p>
+<p></p>
+<p></p>
+<p></p>
+<div >
+    <div class="container" >
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="text-uppercase section-heading">details de la cellule </h2>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <form #monFormulaire="ngForm">
+                <div class="form-row">
+                  <div class="col-md-6">
+
+
+                    <div class="form-group">
+                      <input ngModel class="form-control" type="text" id="reference"  name="reference" placeholder="reference du matrice*" required [(ngModel)]="matriceAdd.ref" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                      <div class="form-group">
+                        <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="nom*" required [(ngModel)]="matriceAdd.nom" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+
+                        <div class="form-group">
+                          <input ngModel class="form-control" type="text" id="VLANCompus"  name="VLANCompus" placeholder="VLANCompus*" required [(ngModel)]="matriceAdd.VLANCompus" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                          <div class="form-group">
+                            <input ngModel class="form-control" type="text" id="CloudServeur"  name="CloudServeur" placeholder="CloudServeur*" required [(ngModel)]="matriceAdd.CloudServeur" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="ServeursSiege"  name="ServeursSiege" placeholder="ServeursSiege*" required [(ngModel)]="matriceAdd.ServeursSiege" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                              <div class="form-group">
+                                <input ngModel class="form-control" type="text" id="FireWall"  name="FireWall" placeholder="FireWall*" required [(ngModel)]="matriceAdd.FireWall" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="Proxy"  name="Proxy" placeholder="Proxy*" required [(ngModel)]="matriceAdd.Proxy" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                  <div class="form-group">
+                                    <input ngModel class="form-control" type="text" id="Internet"  name="Internet" placeholder="Internet*" required [(ngModel)]="matriceAdd.Internet" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                    <div class="form-group">
+                                      <input ngModel class="form-control" type="text" id="PlateformeCP"  name="PlateformeCP" placeholder="PlateformeCP*" required [(ngModel)]="matriceAdd.PlateformeCP" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                      <div class="form-group">
+                                        <input ngModel class="form-control" type="text" id="TTN"  name="TTN" placeholder="TTN*" required [(ngModel)]="matriceAdd.TTN" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                        <div class="form-group">
+                                          <input ngModel class="form-control" type="text" id="Branches"  name="Branches" placeholder="Branches*" required [(ngModel)]="matriceAdd.Branches" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                          <div class="form-group">
+                                            <input ngModel class="form-control" type="text" id="CNI"  name="CNI" placeholder="CNI*" required [(ngModel)]="matriceAdd.CNI" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                            <div class="form-group">
+                                              <input ngModel class="form-control" type="text" id="RelaiS_MTP_DMZ"  name="RelaiS_MTP_DMZ" placeholder="RelaiS_MTP_DMZ*" required [(ngModel)]="matriceAdd.RelaiS_MTP_DMZ" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                              <div class="form-group">
+                                                <input ngModel class="form-control" type="text" id="ServeurAntivirus"  name="ServeurAntivirus" placeholder="ServeurAntivirus*" required [(ngModel)]="matriceAdd.ServeurAntivirus" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+                        </div>
+
+
+
+
+
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                        <div id="success"></div>
+                        <button
+
+                        (click)="processForm()"
+
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Modifier</button>
+                         <button
+                         (click)="Annuler()"
+                         class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                    </div>
+                  </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    </div>

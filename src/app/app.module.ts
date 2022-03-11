@@ -46,6 +46,8 @@ import { AutorisationComponent } from './autorisation/autorisation.component';
 import { UpdateAutorisationComponent } from './autorisation/update-autorisation/update-autorisation.component';
 import { ConfirmationlistComponent } from './autorisation/confirmationlist/confirmationlist.component';
 import { ConfirmationComponent } from './autorisation/confirmation/confirmation.component';
+import { MatriceComponent } from './matrice/matrice.component';
+import { UpdateMatriceComponent } from './matrice/update-matrice/update-matrice.component';
 
 
 @NgModule({
@@ -88,6 +90,8 @@ import { ConfirmationComponent } from './autorisation/confirmation/confirmation.
     UpdateAutorisationComponent,
     ConfirmationlistComponent,
     ConfirmationComponent,
+    MatriceComponent,
+    UpdateMatriceComponent,
   ],
   imports: [
     BrowserModule,

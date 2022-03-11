@@ -18,6 +18,8 @@ import { IncidentComponent } from './incident/incident.component';
 import { UpdateIncidentComponent } from './incident/update-incident/update-incident.component';
 import { InformationComponent } from './information/information.component';
 import { UpdateInformationComponent } from './information/update-information/update-information.component';
+import { MatriceComponent } from './matrice/matrice.component';
+import { UpdateMatriceComponent } from './matrice/update-matrice/update-matrice.component';
 import { PerimetreComponent } from './perimetre/perimetre.component';
 import { UpdatePerimetreComponent } from './perimetre/update-perimetre/update-perimetre.component';
 import { ProgrammeComponent } from './programme/programme.component';
@@ -46,12 +48,14 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'stagiaire', component:StagiaireComponent},
 {path: 'actif', component:ActifComponent},
 {path: 'sortie', component:SortieComponent},
+{path: 'matrice', component:MatriceComponent},
 {path: 'signature', component:SignatureComponent},
 {path: 'information', component:InformationComponent},
 {path: 'perimetre', component:PerimetreComponent},
 {path: 'programme', component:ProgrammeComponent},
 {path: 'autorisation', component:AutorisationComponent},
 {path: 'updateReunion/:id', component:UpdateReunionComponent},
+{path: 'updateMatrice/:id', component:UpdateMatriceComponent},
 {path: 'updateAutorisation/:id', component:UpdateAutorisationComponent},
 {path: 'updateSortie/:id', component:UpdateSortieComponent},
 {path: 'updateActif/:id', component:UpdateActifComponent},

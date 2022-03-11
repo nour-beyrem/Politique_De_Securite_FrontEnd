@@ -1,0 +1,223 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top " id="mainNav">
+  <div class="container"><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto text-uppercase">
+            <li class="nav-item">
+              <a
+
+                class="nav-link"
+                routerLinkActive="active text-primary"
+                (click)="home()"
+              >
+                <b> Acceuil</b>
+              </a>
+            </li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/matrice#list">Matrices</a></li>
+              <li class="nav-item"></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/matrice#ajouter">Ajout Matrice</a></li>
+              <li class="nav-item"></li>
+
+
+              <li class="nav-item">
+                <a
+                  *ngIf="authService.isAuthenticated()"
+                  class="nav-link"
+                  routerLinkActive="active text-primary"
+                  (click)="logout()"
+                >
+                  <b> Logout</b>
+                </a>
+              </li>
+              <li class="nav-item"></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+
+
+
+  <!-- team section -->
+  <section class="bg-light" id="list">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Matrice</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+                <input ngModel class="form-control" type="text" id="ref"  name="ref" placeholder="reference du matrice*" required [(ngModel)]="ref" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+              <button
+
+
+                                          (click)="Rechercher()"
+                                           class="btn btn-warning btn-xl text-uppercase" type="submit">chercher</button>
+
+              <table class="table" id='matrice' >
+                <thead class="thead-dark" type="color" value="#123456" >
+                    <tr >
+                        <th></th>
+                        <th>VLANCompus</th>
+                        <th>CloudServeur </th>
+                        <th>ServeursSiège</th>
+                        <th>FireWall</th>
+                        <th>Proxy</th>
+                        <th>Internet</th>
+                        <th>PlateformeCP</th>
+                        <th>TTN</th>
+                        <th>Branches</th>
+                        <th>CNI</th>
+                        <th>RelaiS_MTP_DMZ</th>
+                        <th>ServeurAntivirus</th>
+                        <th> Traitement</th>
+
+
+
+
+
+                    </tr>
+                </thead>
+                <tr *ngFor="let matrice of matrices ">
+                  <th>{{matrice.nom}}</th>
+                  <th>{{matrice.VLANCompus}}</th>
+                  <th>{{matrice.CloudServeur}}</th>
+                  <th>{{matrice.ServeursSiege}}</th>
+                  <th>{{matrice.FireWall}}</th>
+                  <th>{{matrice.Proxy}}</th>
+                  <th>{{matrice.Internet}}</th>
+                  <th>{{matrice.PlateformeCP}}</th>
+                    <th>{{matrice.TTN}}</th>
+                    <th>{{matrice.Branches}}</th>
+                    <th>{{matrice.CNI}}</th>
+                    <th>{{matrice.RelaiS_MTP_DMZ}}</th>
+                    <th>{{matrice.ServeurAntivirus}}</th>
+
+
+
+                    <th>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateMatrice',matrice.id]"> update</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteMatrice(matrice.id)"> delete</button>
+                  </th>
+
+                </tr>
+            </table>
+
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+  <section class="bg-light" id="ajouter">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Ajouter une ligne du matrice</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <form #monFormulaire="ngForm">
+                    <div class="form-row">
+                        <div class="col-md-6">
+
+
+                            <div class="form-group">
+                              <input ngModel class="form-control" type="text" id="reference"  name="reference" placeholder="reference du matrice*" required [(ngModel)]="matriceAdd.ref" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+                              <form>
+                                <select ngModel class="form-control"  id="nom" name="nom"  placeholder="nom *" required [(ngModel)]="matriceAdd.nom">
+                                  <option value="">--choisir un nom--</option>
+                                  <option>VLANCompus</option>
+                                  <option>CloudServeur</option>
+                                  <option>ServeursSiege</option>
+                                  <option>FireWall</option>
+                                  <option>Proxy</option>
+                                  <option>Internet</option>
+                                  <option>PlateformeCP</option>
+                                  <option>TTN</option>
+                                  <option>Branches</option>
+                                  <option>CNI</option>
+                                  <option>RelaiS_MTP_DMZ</option>
+                                  <option>ServeurAntivirus</option>
+
+                                  </select>
+                                </form>
+<p></p>
+                                <div class="form-group">
+                                  <input ngModel class="form-control" type="text" id="VLANCompus"  name="VLANCompus" placeholder="VLANCompus*" required [(ngModel)]="matriceAdd.VLANCompus" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                  <div class="form-group">
+                                    <input ngModel class="form-control" type="text" id="CloudServeur"  name="CloudServeur" placeholder="CloudServeur*" required [(ngModel)]="matriceAdd.CloudServeur" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                    <div class="form-group">
+                                      <input ngModel class="form-control" type="text" id="ServeursSiege"  name="ServeursSiege" placeholder="ServeursSiege*" required [(ngModel)]="matriceAdd.ServeursSiege" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                      <div class="form-group">
+                                        <input ngModel class="form-control" type="text" id="FireWall"  name="FireWall" placeholder="FireWall*" required [(ngModel)]="matriceAdd.FireWall" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                        <div class="form-group">
+                                          <input ngModel class="form-control" type="text" id="Proxy"  name="Proxy" placeholder="Proxy*" required [(ngModel)]="matriceAdd.Proxy" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                          <div class="form-group">
+                                            <input ngModel class="form-control" type="text" id="Internet"  name="Internet" placeholder="Internet*" required [(ngModel)]="matriceAdd.Internet" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                            <div class="form-group">
+                                              <input ngModel class="form-control" type="text" id="PlateformeCP"  name="PlateformeCP" placeholder="PlateformeCP*" required [(ngModel)]="matriceAdd.PlateformeCP" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                              <div class="form-group">
+                                                <input ngModel class="form-control" type="text" id="TTN"  name="TTN" placeholder="TTN*" required [(ngModel)]="matriceAdd.TTN" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                                <div class="form-group">
+                                                  <input ngModel class="form-control" type="text" id="Branches"  name="Branches" placeholder="Branches*" required [(ngModel)]="matriceAdd.Branches" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                                  <div class="form-group">
+                                                    <input ngModel class="form-control" type="text" id="CNI"  name="CNI" placeholder="CNI*" required [(ngModel)]="matriceAdd.CNI" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                                    <div class="form-group">
+                                                      <input ngModel class="form-control" type="text" id="RelaiS_MTP_DMZ"  name="RelaiS_MTP_DMZ" placeholder="RelaiS_MTP_DMZ*" required [(ngModel)]="matriceAdd.RelaiS_MTP_DMZ" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                                      <div class="form-group">
+                                                        <input ngModel class="form-control" type="text" id="ServeurAntivirus"  name="ServeurAntivirus" placeholder="ServeurAntivirus*" required [(ngModel)]="matriceAdd.ServeurAntivirus" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+                                </div>
+
+                                <div class="col-md-6">
+                                  <div class="clearfix"></div>
+                                     <div class="col-lg-12 text-center">
+                                         <div id="success"></div>
+                                         <button
+
+
+                                         (click)="createMatrice()"
+                                          class="btn btn-warning btn-xl text-uppercase" type="submit">Ajouter</button>
+
+                                          <button
+                                          (click)="Annuler()"
+                                          class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
+                                     </div>
+                                                     </div>
+
+
+
+
+
+                      </div>
+                </form>
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+
+
+
+
