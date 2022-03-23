@@ -138,6 +138,20 @@ Annuler(){
 }
 
 
+Recherche(){
+  this.incident.getIncident(this.id).subscribe((result:any)=>{
+    console.log(result)
+    this.incidents=result
+  },
+  (error)=>{
+   alert(error)
+  }
+
+  )
+}
+
+
+
 deleteIncident(Pat:any) {
   this.incident.deleteIncident(Pat).subscribe(
     (data)=>{

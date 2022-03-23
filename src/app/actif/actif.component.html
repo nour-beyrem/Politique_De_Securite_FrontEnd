@@ -56,6 +56,10 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
+              <div class="form-group">
+
+                <input ngModel class="form-control" type="text" id="ref"  name="ref" placeholder="id de l'actif" required [(ngModel)]="ref" (keyup)="Rechercher()"/><small class="form-text text-danger flex-grow-1 help-block lead"></small>
+</div>
               <table class="table" id='actif' >
                 <thead class="thead-dark" type="color" value="#123456" >
                     <tr >
@@ -78,8 +82,8 @@
                     <th>{{actif.proprietaire.prenom}} {{actif.proprietaire.nom}}</th>
 
                     <th>
-                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateActif',actif.id]"> update</button>
-                      <button type="button" class="btn btn-outline-secondary" (click)="deleteActif(actif.id)"> delete</button>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateActif',actif.id]">Modifier</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteActif(actif.id)">Supprimer</button>
                   </th>
 
                 </tr>
@@ -109,33 +113,47 @@
 
 
                             <div class="form-group">
+                              <label> Référence:</label>
                               <input ngModel class="form-control" type="text" id="reference"  name="reference" placeholder="reference de l'actif*" required [(ngModel)]="actifAdd.reference" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                               <div class="form-group">
+                                <label> Nom:</label>
                                 <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="nom de l'actif*" required [(ngModel)]="actifAdd.nom" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                 <div class="form-group">
+                                  <label> Type:</label>
                                   <input ngModel class="form-control" type="text" id="type"  name="type" placeholder="type de l'actif*" required [(ngModel)]="actifAdd.type" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                   <div class="form-group">
+                                    <label> Adresse IP:</label>
                                     <input ngModel class="form-control" type="text" id="adressIP"  name="adressIP" placeholder="adresse ip de l'actif*" required [(ngModel)]="actifAdd.adresseIP" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                                   <div class="form-group">
+                                    <label> Localisation:</label>
                                     <input ngModel class="form-control" type="text" id="localisation"  name="localisation" placeholder="localisation de l'actif*" required [(ngModel)]="actifAdd.localisation" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                     <div class="form-group">
+                                      <label> Genre:</label>
+
                                       <input ngModel class="form-control" type="text" id="genre"  name="genre" placeholder="genre de l'actif*" required [(ngModel)]="actifAdd.genre" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                      </div> <div class="col-md-6">
                                       <div class="form-group">
+                                        <label> Serveur D'Application:</label>
                                         <input ngModel class="form-control" type="text" id="serveurApplication"  name="serveurApplication" placeholder="serveur d'application de l'actif*" required [(ngModel)]="actifAdd.serveurApplication" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                         <div class="form-group">
+                                          <label> Base De Donnée:</label>
                                           <input ngModel class="form-control" type="text" id="bd"  name="bd" placeholder="base de donnée de l'actif*" required [(ngModel)]="actifAdd.bd" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                           <div class="form-group">
+                                            <label> OS:</label>
                                             <input ngModel class="form-control" type="text" id="os"  name="os" placeholder="os de l'actif*" required [(ngModel)]="actifAdd.os" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                             <div class="form-group">
+                                              <label> DMIA:</label>
                                               <input ngModel class="form-control" type="text" id="dmia"  name="dmia" placeholder="DMIA de l'actif*" required [(ngModel)]="actifAdd.dmia" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                               <div class="form-group">
+                                                <label> Criticité CID:</label>
                                                 <input ngModel class="form-control" type="number" id="criticiteCID"  name="criticiteCID" placeholder="criticite CID de l'actif*" required [(ngModel)]="actifAdd.criticiteCID" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                               <div class="form-group">
+                                <label> Proprietaire:</label>
                                 <mat-select  ngModel class="form-control" name="proprietaire" required [(ngModel)]="actifAdd.proprietaire" id="proprietaire">
 
-                                  <mat-option *ngFor="let user of users" value={{user.username}}> {{user.prenom}} {{user.nom}}</mat-option>
+                                  <mat-option *ngFor="let user of users" value={{user.username}}>{{user.username}}: {{user.prenom}} {{user.nom}}</mat-option>
                                  </mat-select>
                            <small class="form-text text-danger help-block lead"></small>
 

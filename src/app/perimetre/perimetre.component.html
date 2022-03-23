@@ -109,20 +109,32 @@
 
 
                             <div class="form-group">
+                              <label> Perimetre:</label>
                                 <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="nom du perimetre*" required [(ngModel)]="perimetreAdd.nom" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                 <div class="form-group">
+                                  <label> Controle D'acces:</label>
                                   <input ngModel class="form-control" type="text" id="controleAcces"  name="controleAcces" placeholder="controle d'acces du perimetre*" required [(ngModel)]="perimetreAdd.controleAcces" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                        <div class="form-group">
+                                        <label> Mesure De Sécurité:</label>
                                       <textarea ngModel class="form-control" type="text" id="mesureSecurite"  name="mesureSecurite" placeholder="mesure de securite du perimetre*" required [(ngModel)]="perimetreAdd.mesureSecurite" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
 
-                                  <div class="form-group">
+
+                                     <div class="form-group">
+                                    <label> Criticite CID:</label>
                                     <input ngModel class="form-control" type="text" id="criticiteCID"  name="criticiteCID" placeholder="criticite CID du perimetre*" required [(ngModel)]="perimetreAdd.criticiteCID" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
-                              <div class="form-group">
-                            <select ngModel class="form-control" name="proprietaire" required [(ngModel)]="perimetreAdd.proprietaire" id="proprietaire" >
-                              <option *ngFor="let user of users" >{{user.username}}</option>
-                            </select>
-                           <small class="form-text text-danger help-block lead"></small></div>
+                                    <div class="form-group">
+
+
+
+                                      <mat-select  ngModel class="form-control" name="proprietaire" required [(ngModel)]="perimetreAdd.proprietaire" id="proprietaire" >
+
+                                        <mat-option *ngFor="let user of users" value={{user.username}}> {{user.username}} {{user.prenom}}{{user.nom}}</mat-option>
+                                       </mat-select>
+
+
+                                       <small class="form-text text-danger help-block lead"></small></div>
+
 
                             </div>
 

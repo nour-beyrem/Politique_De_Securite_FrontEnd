@@ -14,6 +14,7 @@ import { PredictionService } from './prediction.service';
 })
 export class InformationComponent implements OnInit {
   informations:any
+  id:any;
   informationAdd = {
     createdAt:'',
     updatedAt:'',
@@ -132,6 +133,19 @@ this.information.deleteInformation(Pat).subscribe(
 });
 
 
+}
+
+
+Recherche(){
+  this.information.getInformation(this.id).subscribe((result:any)=>{
+    console.log(result)
+    this.informations=result
+  },
+  (error)=>{
+   alert(error)
+  }
+
+  )
 }
 
 logout(): void {

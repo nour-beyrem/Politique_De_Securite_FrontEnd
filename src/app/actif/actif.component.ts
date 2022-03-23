@@ -22,6 +22,7 @@ export class ActifComponent implements OnInit {
   username:any
   nom:any
   prenom:any
+  ref:any
 
   actifAdd = {
     createdAt:'',
@@ -144,7 +145,18 @@ this.userService.getUsers().subscribe((result:any)=>{
 }
 
 
+Rechercher()
+{
+  this.actif.getActif(this.ref).subscribe((result:any)=>{
+    console.log(result)
+    this.actifs=result
+  },
+  (error)=>{
+   alert('error')
+  }
 
+  )
+}
 
 Annuler(){
   this.actifAdd={

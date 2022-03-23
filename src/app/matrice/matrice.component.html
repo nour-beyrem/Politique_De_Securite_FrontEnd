@@ -54,19 +54,13 @@
                 <h2 class="text-uppercase section-heading">Matrice</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="row" class="table-responsive" >
             <div class="col-lg-12">
               <div class="form-group">
-                <input ngModel class="form-control" type="text" id="ref"  name="ref" placeholder="reference du matrice*" required [(ngModel)]="ref" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                <input ngModel class="form-control" type="text" id="ref"  name="ref" placeholder="reference du matrice*" required [(ngModel)]="ref" (keyup)="Rechercher()" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
 
-              <button
-
-
-                                          (click)="Rechercher()"
-                                           class="btn btn-warning btn-xl text-uppercase" type="submit">chercher</button>
-
-              <table class="table" id='matrice' >
+             <table class="table" id='matrice'  >
                 <thead class="thead-dark" type="color" value="#123456" >
                     <tr >
                         <th></th>
@@ -108,8 +102,8 @@
 
 
                     <th>
-                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateMatrice',matrice.id]"> update</button>
-                      <button type="button" class="btn btn-outline-secondary" (click)="deleteMatrice(matrice.id)"> delete</button>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateMatrice',matrice.id]">Modifier</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteMatrice(matrice.id)">Supprimer</button>
                   </th>
 
                 </tr>
@@ -139,9 +133,11 @@
 
 
                             <div class="form-group">
+                              <label> Référence:</label>
                               <input ngModel class="form-control" type="text" id="reference"  name="reference" placeholder="reference du matrice*" required [(ngModel)]="matriceAdd.ref" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                               <form>
+                                <label> Nom:</label>
                                 <select ngModel class="form-control"  id="nom" name="nom"  placeholder="nom *" required [(ngModel)]="matriceAdd.nom">
                                   <option value="">--choisir un nom--</option>
                                   <option>VLANCompus</option>
@@ -161,34 +157,49 @@
                                 </form>
 <p></p>
                                 <div class="form-group">
+                                  <label> VLAN Compus:</label>
                                   <input ngModel class="form-control" type="text" id="VLANCompus"  name="VLANCompus" placeholder="VLANCompus*" required [(ngModel)]="matriceAdd.VLANCompus" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                   <div class="form-group">
+                                    <label> CLoud Serveur:</label>
                                     <input ngModel class="form-control" type="text" id="CloudServeur"  name="CloudServeur" placeholder="CloudServeur*" required [(ngModel)]="matriceAdd.CloudServeur" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                     <div class="form-group">
+                                      <label> Serveurs Siége:</label>
                                       <input ngModel class="form-control" type="text" id="ServeursSiege"  name="ServeursSiege" placeholder="ServeursSiege*" required [(ngModel)]="matriceAdd.ServeursSiege" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                       <div class="form-group">
+                                        <label> Firewall:</label>
                                         <input ngModel class="form-control" type="text" id="FireWall"  name="FireWall" placeholder="FireWall*" required [(ngModel)]="matriceAdd.FireWall" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                         <div class="form-group">
+                                          <label> Proxy:</label>
                                           <input ngModel class="form-control" type="text" id="Proxy"  name="Proxy" placeholder="Proxy*" required [(ngModel)]="matriceAdd.Proxy" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                          </div>
+                                          <div class="col-md-6">
+
                                           <div class="form-group">
+                                            <label> Internet:</label>
                                             <input ngModel class="form-control" type="text" id="Internet"  name="Internet" placeholder="Internet*" required [(ngModel)]="matriceAdd.Internet" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                             <div class="form-group">
+                                              <label> Plateforme CP:</label>
                                               <input ngModel class="form-control" type="text" id="PlateformeCP"  name="PlateformeCP" placeholder="PlateformeCP*" required [(ngModel)]="matriceAdd.PlateformeCP" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                               <div class="form-group">
+                                                <label> TTN:</label>
                                                 <input ngModel class="form-control" type="text" id="TTN"  name="TTN" placeholder="TTN*" required [(ngModel)]="matriceAdd.TTN" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                                 <div class="form-group">
+                                                  <label> Branches:</label>
                                                   <input ngModel class="form-control" type="text" id="Branches"  name="Branches" placeholder="Branches*" required [(ngModel)]="matriceAdd.Branches" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                                   <div class="form-group">
+                                                    <label> CNI:</label>
                                                     <input ngModel class="form-control" type="text" id="CNI"  name="CNI" placeholder="CNI*" required [(ngModel)]="matriceAdd.CNI" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                                     <div class="form-group">
+                                                      <label> Relais MTP DMZ:</label>
                                                       <input ngModel class="form-control" type="text" id="RelaiS_MTP_DMZ"  name="RelaiS_MTP_DMZ" placeholder="RelaiS_MTP_DMZ*" required [(ngModel)]="matriceAdd.RelaiS_MTP_DMZ" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                                       <div class="form-group">
+                                                        <label> Serveur Antivirus:</label>
                                                         <input ngModel class="form-control" type="text" id="ServeurAntivirus"  name="ServeurAntivirus" placeholder="ServeurAntivirus*" required [(ngModel)]="matriceAdd.ServeurAntivirus" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
 
                                 </div>
 
-                                <div class="col-md-6">
+
                                   <div class="clearfix"></div>
                                      <div class="col-lg-12 text-center">
                                          <div id="success"></div>
@@ -202,7 +213,7 @@
                                           (click)="Annuler()"
                                           class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
                                      </div>
-                                                     </div>
+
 
 
 

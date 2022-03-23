@@ -96,6 +96,7 @@ this.userService.getUsers().subscribe((result:any)=>{
           `perimetre a été ajouté avec succès`
 
         );
+        console.log(this.perimetreAdd)
         this.perimetreAdd={
           createdAt:'',
           updatedAt:'',
