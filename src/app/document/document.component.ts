@@ -93,6 +93,7 @@ this.userService.getUsers().subscribe((result:any)=>{
           `document a été ajouté avec succès`
 
         );
+        console.log(this.documentAdd.document)
         this.documentAdd={
           createdAt:'',
           updatedAt:'',
@@ -109,6 +110,7 @@ this.userService.getUsers().subscribe((result:any)=>{
       },
       (error) => {
         console.log(error);
+
       });
 
 }

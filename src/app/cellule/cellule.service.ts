@@ -36,4 +36,8 @@ export class CelluleService {
   deleteCellule(id: any): Observable<any> {
     return this.httpClient.delete(`${this.Userurl}/${id}`);
   }
+
+  getCelluleByRef(reference: any): Observable<any> {
+    return this.httpClient.get(`${this.Userurl}/ref/${reference}`);
+  }
 }

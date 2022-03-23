@@ -48,7 +48,11 @@ import { ConfirmationlistComponent } from './autorisation/confirmationlist/confi
 import { ConfirmationComponent } from './autorisation/confirmation/confirmation.component';
 import { MatriceComponent } from './matrice/matrice.component';
 import { UpdateMatriceComponent } from './matrice/update-matrice/update-matrice.component';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 @NgModule({
   declarations: [
@@ -102,7 +106,13 @@ import { UpdateMatriceComponent } from './matrice/update-matrice/update-matrice.
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    PdfViewerModule
+    PdfViewerModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MaterialFileInputModule,
+    MatFileUploadModule
+
+
 
   ],
   providers: [ {provide: HTTP_INTERCEPTORS,

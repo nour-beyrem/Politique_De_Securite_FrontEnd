@@ -6,6 +6,7 @@ import { AuthService } from '../authentification/auth.service';
 import { TokenService } from '../authentification/token.service';
 import { UserAuthService } from '../authentification/user.service';
 import { ProgrammeService } from './programme.service';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-programme',
@@ -13,8 +14,7 @@ import { ProgrammeService } from './programme.service';
   styleUrls: ['./programme.component.css']
 })
 export class ProgrammeComponent implements OnInit {
-
-  programmes:any
+ programmes:any
   users:any
   id:string="";
   auth:any;
@@ -69,6 +69,17 @@ export class ProgrammeComponent implements OnInit {
 
     )
 
+    this.userService.getUsers().subscribe((result:any)=>{
+      console.log(result)
+      this.users=result
+
+    },
+    (error)=>{
+     alert('error')
+    }
+
+    )
+
 
   }
 
@@ -85,7 +96,7 @@ export class ProgrammeComponent implements OnInit {
       pv:this.programmeAdd.pv,
       etat:this.programmeAdd.etat,
       presence:this.programmeAdd.presence,
-      publicConcerne:this.programmeAdd.publicConcerne,
+      publicConcerne:this.programmeAdd.publicConcerne.toString(),
 
     };
 
@@ -96,6 +107,7 @@ export class ProgrammeComponent implements OnInit {
           `programme a été ajouté avec succès`
 
         );
+        console.log(this.programmeAdd.publicConcerne)
         this.programmeAdd={
           createdAt:'',
           updatedAt:'',
@@ -117,6 +129,7 @@ export class ProgrammeComponent implements OnInit {
       },
       (error) => {
         console.log(error);
+        console.log(this.programmeAdd.publicConcerne.toString())
       });
 
 }

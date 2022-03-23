@@ -14,7 +14,7 @@
             </li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/document#ajouter">Ajout Document</a></li>
               <li class="nav-item"></li>
-              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/document#list">Nos Document</a></li>
+              <!--<li class="nav-item"><a class="nav-link js-scroll-trigger" href="/document#list">Nos Document</a></li> -->
               <li class="nav-item"></li>
 
 
@@ -64,6 +64,7 @@
                         <div class="col-md-6">
 
                           <form>
+                            <label> Type de Document:</label>
                             <select ngModel class="form-control"  id="typeChapitre" name="typeChapitre"  placeholder="type de document  *" required [(ngModel)]="documentAdd.typeChapitre">
                               <option value="">--choisir un type ou non du document--</option>
                               <option>charte </option>
@@ -76,12 +77,16 @@
                             </form>
 <p></p>
                             <div class="form-group">
+                              <label> Support:</label>
                               <input ngModel class="form-control" type="file" id="document"  name="document" placeholder="document*" required [(ngModel)]="documentAdd.document" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
-                            <div class="form-group">
+
+                              <div class="form-group">
+                                <label> Commentaire:</label>
                               <textarea ngModel class="form-control" type="text" id="commentaire"  name="commentaire" placeholder="commentaire sur le document*" required [(ngModel)]="documentAdd.commentaire" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
 
                               <form>
+                                <label> Destinataire:</label>
                                 <select ngModel class="form-control"  id="qui" name="qui"  placeholder="qui  *" required [(ngModel)]="documentAdd.qui">
                                   <option value="">--choisir un destinataire--</option>
                                   <option>responsable </option>
@@ -119,7 +124,7 @@
 
 
   </section>
-
+<!--
 
  <section class="bg-light" id="list">
     <div style="background-color: bg-info"  >
@@ -153,8 +158,8 @@
 
 
                     <th>
-                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateDocument',document.id]"> update</button>
-                      <button type="button" class="btn btn-outline-secondary" (click)="deleteDocument(document.id)"> delete</button>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateDocument',document.id]">Modifier</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteDocument(document.id)">Supprimer</button>
                   </th>
 
                 </tr>
@@ -167,4 +172,4 @@
 
   </section>
 
-
+-->

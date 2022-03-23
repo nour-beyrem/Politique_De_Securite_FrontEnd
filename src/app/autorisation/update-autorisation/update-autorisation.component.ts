@@ -37,6 +37,7 @@ export class UpdateAutorisationComponent implements OnInit {
       this.autorisation.getAutoriation(this.id).subscribe((result:any)=>{
 
        this.autorisationAdd=result[0];
+       console.log(this.autorisationAdd)
 this.userA=this.autorisationAdd.user.username
 this.userR=this.autorisationAdd.responsable.username
 this.actifS=this.autorisationAdd.actif.id

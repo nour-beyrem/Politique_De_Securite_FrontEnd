@@ -12,7 +12,7 @@ import { CelluleService } from './cellule.service';
   styleUrls: ['./cellule.component.css']
 })
 export class CelluleComponent implements OnInit {
-
+ref:any
   cellules:any
   users:any
   id:string="";
@@ -27,7 +27,7 @@ export class CelluleComponent implements OnInit {
     createdAt:'',
     updatedAt:'',
     deletedAt:'',
-    reference:0,
+    reference:'',
     president: '',
     membre1: '',
     membre2:'',
@@ -71,7 +71,18 @@ this.userService.getUsers().subscribe((result:any)=>{
 
   }
 
+  Rechercher()
+  {
+    this.cellule.getCelluleByRef(this.ref).subscribe((result:any)=>{
 
+      this.cellules=result
+    },
+    (error)=>{
+     alert('error')
+    }
+
+    )
+  }
   createCellule(): void {
     const data = {
       reference: this.celluleAdd.reference,
@@ -93,7 +104,7 @@ this.userService.getUsers().subscribe((result:any)=>{
           createdAt:'',
           updatedAt:'',
           deletedAt:'',
-          reference:0,
+          reference:'',
           president: '',
           membre1: '',
           membre2:'',
@@ -117,7 +128,7 @@ Annuler(){
     createdAt:'',
     updatedAt:'',
     deletedAt:'',
-    reference:0,
+    reference:'',
     president: '',
     membre1: '',
     membre2:'',

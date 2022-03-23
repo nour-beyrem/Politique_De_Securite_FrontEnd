@@ -126,9 +126,19 @@
                                       <input ngModel class="form-control" type="Date" id="Date"  name="Date" placeholder="Date du programme*" required [(ngModel)]="programmeAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                       <div class="form-group">
                                         <input ngModel class="form-control" type="text" id="etat"  name="etat" placeholder="etat du programme*" required [(ngModel)]="programmeAdd.etat" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                                        <div class="form-group">
-                                          <textarea ngModel class="form-control" type="text" id="publicConcerne"  name="publicConcerne" placeholder="public Concerne du programme*" required [(ngModel)]="programmeAdd.publicConcerne" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
 
+
+                                        <div class="form-group">
+
+
+
+                                          <mat-select  ngModel class="form-control" name="publicConcerne" required [(ngModel)]="programmeAdd.publicConcerne" id="publicConcerne" multiple>
+
+                                            <mat-option *ngFor="let user of users" value={{user.nom}}> {{user.nom}}</mat-option>
+                                           </mat-select>
+
+
+                                           <small class="form-text text-danger help-block lead"></small></div>
                             <div class="form-group">
                               <textarea ngModel class="form-control" type="text" id="pv"  name="pv" placeholder="pv du programme*" required [(ngModel)]="programmeAdd.pv" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
                               <div class="form-group">

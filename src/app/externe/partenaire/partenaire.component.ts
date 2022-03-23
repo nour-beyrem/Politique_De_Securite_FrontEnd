@@ -25,6 +25,7 @@ export class PartenaireComponent implements OnInit {
   charte:any;
   type:string="contrat_Partenaire";
   support:any
+  ref:any
 
   externeAdd = {
     createdAt:'',
@@ -86,6 +87,18 @@ export class PartenaireComponent implements OnInit {
     )
 
 
+  }
+
+  Recherche(){
+    this.externe.getExterne(this.ref).subscribe((result:any)=>{
+      console.log(result)
+      this.externes=result
+    },
+    (error)=>{
+     alert('vous n avez pas le droit de consulter la liste de tous les partenaire, vous pouvez seuleument signer')
+    }
+
+    )
   }
 
 

@@ -112,7 +112,7 @@ this.userService.getUsers().subscribe((result:any)=>{
     .subscribe(
       (response) => {
         this.toaster.success(
-          `cellule a été ajouté avec succès`
+          `actif a été ajouté avec succès`
 
         );
         this.actifAdd={

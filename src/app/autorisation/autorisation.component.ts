@@ -24,7 +24,11 @@ export class AutorisationComponent implements OnInit {
   username:any
   nom:any
   prenom:any
+  pre:any
   partenaire:any
+  ref:any
+
+
 
 
   autorisationAdd = {
@@ -60,6 +64,7 @@ id:'',
 
     this.username=this.token.getInfos().role;
     this.nom=this.token.getInfos().username;
+
 
 
 
@@ -101,8 +106,22 @@ this.actif.getActifs().subscribe((result:any)=>{
     )
 
 
+
+
   }
 
+  Rechercher()
+  {
+    this.autorisation.getAutoriation(this.ref).subscribe((result:any)=>{
+      console.log(result)
+      this.autorisations=result
+    },
+    (error)=>{
+     alert('error')
+    }
+
+    )
+  }
 
   createAutorisation(): void {
     const data = {
