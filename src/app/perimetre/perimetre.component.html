@@ -56,6 +56,8 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
+              <input ngModel class="form-control" type="text" id="id"  name="id" placeholder="id *" required [(ngModel)]="id" (keyup)="Recherche()"/><small class="form-text text-danger flex-grow-1 help-block lead"></small>
+
               <table class="table" id='perimetre' >
                 <thead class="thead-dark" type="color" value="#123456" >
                     <tr >

@@ -176,4 +176,16 @@ deleteProgramme(Pat:any) {
     this.router.navigate(['homeRes'])
   }
 
+  Recherche(){
+    this.programme.getProgramme(this.id).subscribe((result:any)=>{
+      console.log(result)
+      this.programmes=result
+    },
+    (error)=>{
+     alert(error)
+    }
+
+    )
+  }
+
 }

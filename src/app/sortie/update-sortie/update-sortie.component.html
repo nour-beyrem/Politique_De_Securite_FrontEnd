@@ -28,38 +28,55 @@
                   <div class="col-md-6">
 
                     <div class="form-group">
-                      <select ngModel class="form-control" name="actifS" required [(ngModel)]="sortieAdd.actifS.id" id="actifS" >
-                        <option *ngFor="let actif of actifs" >{{actif.id}}</option>
-                      </select>
+                      <label> Actif:</label>
+
+                      <input ngModel class="form-control" name="actifS" required [(ngModel)]="sortieAdd.actifS.id" id="actifS" /><small class="form-text text-danger flex-grow-1 help-block lead"></small>
+
+
+
+
                      <small class="form-text text-danger help-block lead"></small></div>
 
                       <div class="form-group">
+                        <label>Nature De Panne:</label>
                         <input ngModel class="form-control" type="text" id="naturePanne"  name="naturePanne" placeholder="nature de panne de l'actif*" required [(ngModel)]="sortieAdd.naturePanne" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                         <div class="form-group">
-                          <input ngModel class="form-control" type="text" id="Date"  name="Date" placeholder="Date *" required [(ngModel)]="sortieAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                          <label> Date Aujourd'hui:</label>
+                          <input ngModel class="form-control" type="Date" id="Date"  name="Date" placeholder="Date *" required [(ngModel)]="sortieAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                           <div class="form-group">
-                            <input ngModel class="form-control" type="text" id="dateSortie"  name="dateSortie" placeholder="date de Sortie de l'actif*" required [(ngModel)]="sortieAdd.dateSortie" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                            <label>Date Sortie:</label>
+                            <input ngModel class="form-control" type="Date" id="dateSortie"  name="dateSortie" placeholder="date de Sortie de l'actif*" required [(ngModel)]="sortieAdd.dateSortie" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                             <div class="form-group">
-                              <input ngModel class="form-control" type="text" id="dateRestitution"  name="dateRestitution" placeholder="date de Restitution de l'actif*" required [(ngModel)]="sortieAdd.dateRestitution" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-
+                              <label> Date Restitution:</label>
+                              <input ngModel class="form-control" type="Date" id="dateRestitution"  name="dateRestitution" placeholder="date de Restitution de l'actif*" required [(ngModel)]="sortieAdd.dateRestitution" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+</div>
+<div class="col-md-6">
                             <div class="form-group">
+                              <label> Etat Générale:</label>
                               <input ngModel class="form-control" type="text" id="etatGeneral"  name="etatGeneral" placeholder="etat General de l'actif*" required [(ngModel)]="sortieAdd.etatGeneral" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                               <div class="form-group">
+                                <label> Observation:</label>
                                 <textarea ngModel class="form-control" type="text" id="observation"  name="observation" placeholder="observation de l'actif*" required [(ngModel)]="sortieAdd.observation" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
 
                         <div class="form-group">
-                      <select ngModel class="form-control" name="agentS" required [(ngModel)]="sortieAdd.agentS.username" id="agentS" >
-                        <option *ngFor="let user of users" >{{user.username}}</option>
-                      </select>
+                          <label> Agent Sortie:</label>
+                          <input ngModel class="form-control" name="agentS" required [(ngModel)]="sortieAdd.agentS.username" id="agentS" /><small class="form-text text-danger flex-grow-1 help-block lead"></small>
+
+
                      <small class="form-text text-danger help-block lead"></small></div>
 
                      <div class="form-group">
-                      <select ngModel class="form-control" name="responsable" required [(ngModel)]="sortieAdd.responsable.username" id="responsable" >
-                        <option *ngFor="let user of partenaire" >{{user.id}}</option>
-                      </select>
+                      <label> Responsable:</label>
+                      <input ngModel class="form-control" name="responsable" required [(ngModel)]="sortieAdd.responsable.id" id="responsable" /><small class="form-text text-danger flex-grow-1 help-block lead"></small>
+
+
+
+
                      <small class="form-text text-danger help-block lead"></small></div>
 
                       </div>
+
+
 
 
 

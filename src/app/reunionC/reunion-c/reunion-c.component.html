@@ -56,6 +56,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
+              <input ngModel class="form-control" type="text" id="id"  name="id" placeholder="id *" required [(ngModel)]="id" (keyup)="Recherche()"/><small class="form-text text-danger flex-grow-1 help-block lead"></small>
               <table class="table" id='reunion' >
                 <thead class="thead-dark" type="color" value="#123456" >
                     <tr >
@@ -81,8 +82,8 @@
                     <th>{{reunion.cellule.id}}</th>
 
                     <th>
-                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateReunion',reunion.id]"> update</button>
-                      <button type="button" class="btn btn-outline-secondary" (click)="deleteReunion(reunion.id)"> delete</button>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateReunion',reunion.id]">Modifier</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteReunion(reunion.id)">Supprimer</button>
                   </th>
 
                 </tr>
@@ -112,23 +113,33 @@
 
 
                             <div class="form-group">
+                              <label> Ordre Du Jour:</label>
                               <input ngModel class="form-control" type="text" id="ordreDuJour"  name="ordreDuJour" placeholder="ordre du jour du reunion*" required [(ngModel)]="reunionAdd.ordreDuJour" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-
                               <div class="form-group">
+                                <label> Lieu:</label>
+                                <input ngModel class="form-control" type="text" id="lieu"  name="lieu" placeholder="lieu du reunion*" required [(ngModel)]="reunionAdd.lieu" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                              <div class="form-group">
+                                <label> Date:</label>
+                                <input ngModel class="form-control" type="date" id="date"  name="date" placeholder="date du reunion*" required [(ngModel)]="reunionAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+</div>
+<div class="col-md-6">
+                              <div class="form-group">
+                                <label> Discussion:</label>
                                 <textarea ngModel class="form-control" type="text" id="discussion"  name="discussion" placeholder="discussion reunion*" required [(ngModel)]="reunionAdd.discussion" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
 
-                                <div class="form-group">
-                                  <input ngModel class="form-control" type="text" id="lieu"  name="lieu" placeholder="lieu du reunion*" required [(ngModel)]="reunionAdd.lieu" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                                <div class="form-group">
-                                  <input ngModel class="form-control" type="date" id="date"  name="date" placeholder="date du reunion*" required [(ngModel)]="reunionAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-
-                                  <div class="form-group">
+             <div class="form-group">
+                                    <label> Desicion:</label>
                                     <input ngModel class="form-control" type="file" id="desicion"  name="desicion" placeholder="desicion du reunion*" required [(ngModel)]="reunionAdd.decision" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                            <div class="form-group">
-                            <select ngModel class="form-control" name="cellule" required [(ngModel)]="reunionAdd.cellule" id="cellule" >
-                              <option *ngFor="let cellule of cellules" >{{cellule.id}}</option>
-                            </select>
+                            <label> Cellule:</label>
+
+
+                            <mat-select  ngModel class="form-control" name="cellule" required [(ngModel)]="reunionAdd.cellule" id="cellule" >
+
+                              <mat-option *ngFor="let cellule of cellules" value={{cellule.id}}> {{cellule.id}} : {{cellule.president.prenom}}{{cellule.president.nom}}</mat-option>
+                             </mat-select>
+
                            <small class="form-text text-danger help-block lead"></small></div> </div>
 
 

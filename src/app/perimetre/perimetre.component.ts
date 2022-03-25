@@ -156,5 +156,15 @@ deletePerimetre(Pat:any) {
     this.router.navigate(['homeRes'])
   }
 
+  Recherche(){
+    this.perimetre.getPerimetre(this.id).subscribe((result:any)=>{
+      console.log(result)
+      this.perimetres=result
+    },
+    (error)=>{
+     alert(error)
+    }
 
+    )
+  }
 }

@@ -87,6 +87,7 @@ export class ReunionCComponent implements OnInit {
           `reunion du cellule a été ajouté avec succès`
 
         );
+        console.log(this.reunionAdd)
         this.reunionAdd={
           createdAt:'',
     updatedAt:'',
@@ -105,13 +106,24 @@ export class ReunionCComponent implements OnInit {
 
       },
       (error) => {
+        console.log(this.reunionAdd)
         console.log(error);
       });
 
 }
 
 
+Recherche(){
+  this.reunion.getReunion(this.id).subscribe((result:any)=>{
+    console.log(result)
+    this.reunions=result
+  },
+  (error)=>{
+   alert(error)
+  }
 
+  )
+}
 
 Annuler(){
   this.reunionAdd={

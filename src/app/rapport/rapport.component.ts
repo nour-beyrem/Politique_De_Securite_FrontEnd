@@ -155,7 +155,17 @@ deleteRapport(Pat:any) {
   }
 
 
+  Recherche(){
+    this.rapport.getRapport(this.id).subscribe((result:any)=>{
+      console.log(result)
+      this.rapports=result
+    },
+    (error)=>{
+     alert(error)
+    }
 
+    )
+  }
 
 
 }

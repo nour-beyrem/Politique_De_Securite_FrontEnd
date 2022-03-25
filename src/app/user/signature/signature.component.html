@@ -28,17 +28,20 @@
                   <div class="col-md-6">
 
                     <div class="form-group">
-
+                      <label> Matricule:</label>
                       <input ngModel class="form-control" type="text" id="matricule"  name="matricule" placeholder="matricule  *" [disabled]="true" required [(ngModel)]="personelAdd.matricule" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                     <div class="form-group">
+                      <label> Nom:</label>
                       <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="nom  *" [disabled]="true" required [(ngModel)]="personelAdd.nom" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                       <div class="form-group">
+                        <label> Prenom:</label>
                       <input ngModel class="form-control" type="text" id="prenom" name="prenom"  placeholder="prenom *" [disabled]="true"  required [(ngModel)]="personelAdd.prenom" /><small class="form-text text-danger help-block lead"></small></div>
 
 
                         <div class="form-group">
+                          <label> CIN:</label>
                           <input ngModel class="form-control" type="text" id="cin" name="cin"  placeholder="cin  *" [disabled]="true" required [(ngModel)]="personelAdd.cin" /><small class="form-text text-danger help-block lead"></small></div>
 
 
@@ -54,7 +57,7 @@
 </div>
                           <div>
                                         <input type="checkbox" id="charte" name="charte" value="personelAdd.charte"  required  [(ngModel)]="personelAdd.charte">
-                                        <label for="charte">J'accepte ce que le charte d'engagement dit ?</label>
+                                        <label for="charte">J'accepte les critéres du charte ?</label>
                                       </div>
 
                      </div>

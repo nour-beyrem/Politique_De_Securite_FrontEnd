@@ -188,4 +188,16 @@ deletePersonel(Pat:any) {
     this.router.navigate(['']);
   }
 
+  Recherche(){
+    this.personel.getUser(this.id).subscribe((result:any)=>{
+      console.log(result)
+      this.personels=result
+    },
+    (error)=>{
+     alert(error)
+    }
+
+    )
+  }
+
 }

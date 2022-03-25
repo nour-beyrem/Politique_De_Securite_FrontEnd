@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UserAuthService } from 'src/app/authentification/user.service';
 import { ProgrammeService } from '../programme.service';
 
 @Component({
@@ -15,8 +16,9 @@ export class UpdateProgrammeComponent implements OnInit {
   programmeAdd :any;
   user:any;
   support:any
+  users:any
 
-  constructor(private sanitizer: DomSanitizer,public router: Router,  private toaster: ToastrService,private activatedRoute:ActivatedRoute,private programme:ProgrammeService) { }
+  constructor(private userService : UserAuthService,private sanitizer: DomSanitizer,public router: Router,  private toaster: ToastrService,private activatedRoute:ActivatedRoute,private programme:ProgrammeService) { }
 
   ngOnInit(): void {
 
@@ -40,6 +42,17 @@ export class UpdateProgrammeComponent implements OnInit {
       }
 
       );
+
+      this.userService.getUsers().subscribe((result:any)=>{
+        console.log(result)
+        this.users=result
+
+      },
+      (error)=>{
+       alert('error')
+      }
+
+      )
   }
 
 

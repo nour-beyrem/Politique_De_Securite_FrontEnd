@@ -56,6 +56,8 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
+              <input ngModel class="form-control" type="text" id="id"  name="id" placeholder="id *" required [(ngModel)]="id" (keyup)="Recherche()"/><small class="form-text text-danger flex-grow-1 help-block lead"></small>
+
               <table class="table" id='rapport' >
                 <thead class="thead-dark" type="color" value="#123456" >
                     <tr >
@@ -81,8 +83,8 @@
 
 
                     <th>
-                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateRapport',rapport.id]"> update</button>
-                      <button type="button" class="btn btn-outline-secondary" (click)="deleteRapport(rapport.id)"> delete</button>
+                      <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateRapport',rapport.id]">Modifier</button>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteRapport(rapport.id)"> Supprimer</button>
                   </th>
 
                 </tr>
@@ -112,21 +114,31 @@
 
 
                             <div class="form-group">
+                              <label> Titre Du Rapport:</label>
                               <input ngModel class="form-control" type="text" id="titre"  name="titre" placeholder="titre du rapport*" required [(ngModel)]="rapportAdd.titre" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                               <div class="form-group">
+                                <label> Type Du Rapport:</label>
                                 <input ngModel class="form-control" type="text" id="type"  name="type" placeholder="type du rapport*" required [(ngModel)]="rapportAdd.type" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
                                 <div class="form-group">
+                                  <label> Date Du Rapport:</label>
+                                    <input ngModel class="form-control" type="date" id="date"  name="date" placeholder="date du rapport*" required [(ngModel)]="rapportAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+</div>
+<div class="col-md-6">
+                                    <div class="form-group">
+                                  <label> Sujet Du Rapport:</label>
                                   <input ngModel class="form-control" type="text" id="sujet"  name="sujet" placeholder="sujet du rapport*" required [(ngModel)]="rapportAdd.sujet" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                               <div class="form-group">
+                                <label> Contenu Du Rapport:</label>
                                 <textarea ngModel class="form-control" type="text" id="contenu"  name="contenu" placeholder="contenu du rapport*" required [(ngModel)]="rapportAdd.contenu" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
 
-                               <div class="form-group">
-                                  <input ngModel class="form-control" type="date" id="date"  name="date" placeholder="date du rapport*" required [(ngModel)]="rapportAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                                   <div class="form-group">
+                                    <label> Support:</label> <br>
                                     <input ngModel type="file"  id="filePath"  name="filePath" placeholder="vous pouvez ajouter une fichier*" required [(ngModel)]="rapportAdd.filePath" (change)="readUrl($event)" />
-                                    <iframe [src]="filePath"> </iframe>
+
                                     <small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
                             </div>

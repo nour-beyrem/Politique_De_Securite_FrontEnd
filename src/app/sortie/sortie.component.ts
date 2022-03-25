@@ -206,4 +206,17 @@ deleteSortie(Pat:any) {
     this.router.navigate(['homeRes'])
   }
 
+
+Recherche(){
+  this.sortie.getSortie(this.id).subscribe((result:any)=>{
+    console.log(result)
+    this.sorties=result
+  },
+  (error)=>{
+   alert(error)
+  }
+
+  )
+}
+
 }
