@@ -18,11 +18,12 @@
                 </div>
                 <div class="card-body">
                     <form [formGroup]="loginForm" (ngSubmit)="signIn()">
-                      <h5 class="text-white" >Username :</h5>  <input    ngModel formControlName="username" type="text" class="form-control" />
-                      <h5 class="text-white" >Password :</h5>    <input ngModel  minlength="4" formControlName="password" type="password" class="form-control" />
+                      <h4 class="text-white" >Matricule :</h4>  <input    ngModel formControlName="username" type="text" class="form-control" />
+                      <h4 class="text-white" >Password :</h4>    <input ngModel  minlength="4" formControlName="password" type="password" class="form-control" />
                         <div class="form-group">
                             <button mat-dialog-close (click)="signIn()" type="submit" class="btn float-right  btn-warning"> login </button>
-                        </div>
+
+                              </div>
                     </form>
                 </div>
                 <div class="card-footer">
@@ -30,6 +31,9 @@
 
                     </div>
                     <div class="d-flex justify-content-center">
+                      <button mat-dialog-close (click)="part()" type="submit" class="btn float-right  btn-secondary"> Partenaire </button>
+                      <br>
+                                            <button mat-dialog-close (click)="stag()" type="submit" class="btn float-right  btn-secondary"> Stagiare </button>
 
                     </div>
                 </div>

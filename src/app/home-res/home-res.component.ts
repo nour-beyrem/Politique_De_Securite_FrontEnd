@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../authentification/auth.service';
 
 @Component({
   selector: 'app-home-res',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeResComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router,public authService:AuthService,private toaster: ToastrService) { }
 
   ngOnInit(): void {
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.toaster.info('a la prochaine');
+    this.router.navigate(['']);
   }
 
 }

@@ -1,3 +1,37 @@
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top " id="mainNav">
+  <div class="container"><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto text-uppercase">
+            <li class="nav-item">
+              <a
+                *ngIf="authService.isAuthenticated()"
+                class="nav-link"
+                routerLinkActive="active text-primary"
+                (click)="logout()"
+              >
+                <b> Logout</b>
+              </a>
+            </li>
+
+
+
+
+
+              <li class="nav-item"></li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<header class="masthead" style="background-image:url('assets/image/image_news_get.png');">
+
+  <div class="container">
+      <div class="intro-text">
+
+
+   </div>
+  </div>
+</header>
+
 <div class="container mt-2">
   <!--   <div class="card card-block mb-2">
       <h4 class="card-title">Card 1</h4>

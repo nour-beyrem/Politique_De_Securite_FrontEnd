@@ -53,6 +53,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { MatFileUploadModule } from 'angular-material-fileupload';
+import { SignaturePComponent } from './externe/signature-p/signature-p.component';
+import { SignatureSComponent } from './externe/signature-s/signature-s.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +98,8 @@ import { MatFileUploadModule } from 'angular-material-fileupload';
     ConfirmationComponent,
     MatriceComponent,
     UpdateMatriceComponent,
+    SignaturePComponent,
+    SignatureSComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,8 @@ import { DocumentComponent } from './document/document.component';
 import { UpdateDocumentComponent } from './document/update-document/update-document.component';
 import { PartenaireComponent } from './externe/partenaire/partenaire.component';
 import { UpdatePartenaireComponent } from './externe/partenaire/update-partenaire/update-partenaire.component';
+import { SignaturePComponent } from './externe/signature-p/signature-p.component';
+import { SignatureSComponent } from './externe/signature-s/signature-s.component';
 import { StagiaireComponent } from './externe/stagiaire/stagiaire.component';
 import { UpdateStagiaireComponent } from './externe/stagiaire/update-stagiaire/update-stagiaire.component';
 import { HomeResComponent } from './home-res/home-res.component';
@@ -53,6 +55,8 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'information', component:InformationComponent},
 {path: 'perimetre', component:PerimetreComponent},
 {path: 'programme', component:ProgrammeComponent},
+{path: 'sigP', component:SignaturePComponent},
+{path: 'sigS', component:SignatureSComponent},
 {path: 'autorisation', component:AutorisationComponent},
 {path: 'updateReunion/:id', component:UpdateReunionComponent},
 {path: 'updateMatrice/:id', component:UpdateMatriceComponent},
