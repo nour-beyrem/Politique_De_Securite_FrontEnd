@@ -2,18 +2,36 @@
   <div class="container"><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto text-uppercase">
+
+            <li class="nav-item">
+              <a
+                *ngIf="authService.isAuthenticated()"
+                class="nav-link"
+                [routerLink]="['/profile']"
+              > <i class="material-icons">account_circle</i>
+                <b> Profile</b>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                *ngIf="authService.isAuthenticated()"
+                class="nav-link"
+                [routerLink]="['/signature']"
+              > <i class="material-icons">verified_user</i>
+                <b> Signature</b>
+              </a>
+            </li>
+
             <li class="nav-item">
               <a
                 *ngIf="authService.isAuthenticated()"
                 class="nav-link"
                 routerLinkActive="active text-primary"
                 (click)="logout()"
-              >
+              > <i class="material-icons">home</i>
                 <b> Logout</b>
               </a>
             </li>
-
-
 
 
 
@@ -39,36 +57,132 @@
       <a href="#" class="btn btn-primary">Submit</a>
     </div>   -->
     <div class="row">
-      <div class="col-md-3 col-sm-6">
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
-        <h4 class="card-title text-right"><i class="material-icons">settings</i></h4>
-      <img src="https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg" alt="Photo of sunset">
-          <h5 class="card-title mt-3 mb-3">Sierra Web Development • Owner</h5>
-          <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p>
+        <h4 class="card-title text-right"><i class="material-icons">group_work</i></h4>
+      <img  style="background-image:url('assets/image/cellule.jpg');" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/cellule']">Cellule De Sécurité</a>
+
     </div>
       </div>
-      <div class="col-md-3 col-sm-6">
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
-        <h4 class="card-title text-right"><i class="material-icons">settings</i></h4>
-      <img src="https://static.pexels.com/photos/7357/startup-photos.jpg" alt="Photo of sunset">
-          <h5 class="card-title  mt-3 mb-3">ProVyuh</h5>
-          <p class="card-text">This is a company that builds websites, web .</p>
+        <h4 class="card-title text-right"><i class="material-icons">group_work</i></h4>
+      <img style="background-image:url('assets/image/cellule.jpg');  background-size: cover;" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/reunion']">Reunion Cellule</a>
     </div>
       </div>
-      <div class="col-md-3 col-sm-6">
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
-        <h4 class="card-title text-right"><i class="material-icons">settings</i></h4>
-      <img src="https://static.pexels.com/photos/262550/pexels-photo-262550.jpeg" alt="Photo of sunset">
-          <h5 class="card-title  mt-3 mb-3">ProVyuh</h5>
-          <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p>
+        <h4 class="card-title text-right"><i class="material-icons">group</i></h4>
+      <img style="background-image:url('assets/image/personel.jpg');">
+          <h5 class="card-title mt-3 mb-3"></h5>
+
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/user']" >Personnels</a>
     </div>
       </div>
-      <div class="col-md-3 col-sm-6">
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
-        <h4 class="card-title text-right"><i class="material-icons">settings</i></h4>
-      <img src="https://static.pexels.com/photos/326424/pexels-photo-326424.jpeg" alt="Photo of sunset">
-          <h5 class="card-title  mt-3 mb-3">ProVyuh</h5>
-          <p class="card-text">This is a company that builds websites, web apps and e-commerce solutions.</p>
+        <h4 class="card-title text-right"><i class="material-icons">computer</i></h4>
+      <img style="background-image:url('assets/image/actif.jpg');">
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/actif']">Actifs</a>
+
+    </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">language</i></h4>
+      <img style="background-image:url('assets/image/information.jpg');  background-size: cover;" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/information']">Informations</a>
+    </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">warning</i></h4>
+      <img style="background-image:url('assets/image/incident.jpg');" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/incident']">Incidents</a>
+    </div>
+      </div>
+      <div class="col-md-3 col-sm-6" >
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">library_add</i></h4>
+      <img style="background-image:url('assets/image/information.jpg');" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/autorisation']">Demande Autorisation D'utilisation D'actif</a>
+    </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">location_on</i></h4>
+      <img style="background-image:url('assets/image/perimetre.png');  background-size: cover; " >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/perimetre']">Perimetre</a>
+    </div>
+      </div>
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">view_list</i></h4>
+      <img style="background-image:url('assets/image/programme.jpg');" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/programme']">Programmes De Sensibilisation</a>
+    </div>
+      </div>
+      <div class="col-md-3 col-sm-6" >
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">build</i></h4>
+      <img style="background-image:url('assets/image/sortie.png');  background-size: cover;" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/sortie']">Demander Une Sortie D'actif Pour Maintenance</a>
+    </div>
+      </div>
+      <div class="col-md-3 col-sm-6"  *ngIf="role == 'responsable'">
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">assignment</i></h4>
+      <img style="background-image:url('assets/image/rapport.jpg');  background-size: cover;" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/rapport']">Rapport</a>
+    </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">build</i></h4>
+      <img style="background-image:url('assets/image/sortie.png');  background-size: cover;" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/matrice']">Matrice De Flux</a>
+    </div>
+      </div>
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">school</i></h4>
+      <img style="background-image:url('assets/image/stage.jpg');  " >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/stagiaire']">Les Stagiaires</a>
+    </div>
+      </div>
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">work</i></h4>
+      <img style="background-image:url('assets/image/partenaire.jpg');  background-size: cover;" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/partenaire']">Les Partenaires</a>
+    </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
+        <div class="card card-block">
+        <h4 class="card-title text-right"><i class="material-icons">library_books</i></h4>
+      <img style="background-image:url('assets/image/document.jpg');  background-size: cover;" >
+          <h5 class="card-title  mt-3 mb-3"></h5>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/document']">Document</a>
     </div>
       </div>
     </div>

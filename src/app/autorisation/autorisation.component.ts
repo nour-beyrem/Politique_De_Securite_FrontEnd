@@ -19,7 +19,7 @@ export class AutorisationComponent implements OnInit {
   users:any
   id:string="";
   auth:any;
-
+role:any
   user:any
   username:any
   nom:any
@@ -64,6 +64,7 @@ id:'',
 
     this.username=this.token.getInfos().role;
     this.nom=this.token.getInfos().username;
+this.role=this.token.getInfos().role
 
 
 
@@ -233,7 +234,7 @@ deleteAutorisation(Pat:any) {
     if (this.username=== "responsable")
      this.router.navigate(['homeRes'])
     else
-       this.router.navigate(['homeAgent'])
+       this.router.navigate(['homeRes'])
   }
 
 

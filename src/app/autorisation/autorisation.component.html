@@ -12,10 +12,11 @@
                 <b> Acceuil</b>
               </a>
             </li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/autorisation#ajouter">Ajout Autorisation</a></li>
-            <li class="nav-item"></li>
-              <li *ngIf="authService.isAuthenticated()" class="nav-item"><a class="nav-link js-scroll-trigger" href="/autorisation#list">Nos Autorisation</a></li>
+
+              <li *ngIf="role == 'responsable'" class="nav-item" ><a class="nav-link js-scroll-trigger" href="/autorisation#list">Nos Autorisation</a></li>
               <li class="nav-item"></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger"  href="/autorisation#ajouter">Ajout Autorisation</a></li>
+            <li class="nav-item"></li>
 
 
 
@@ -48,89 +49,8 @@
 
   <!-- team section -->
 
-  <section class="bg-light" id="ajouter">
-    <div style="background-color: bg-info"  >
-      <div class="container" >
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="text-uppercase section-heading">Demander Une autorisation</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 d-flex justify-content-center">
-                <form #monFormulaire="ngForm">
-                    <div class="form-row">
-                        <div class="col-md-6">
 
-
-                            <div class="form-group">
-                              <label> Réference:</label>
-                              <input ngModel class="form-control" type="text" id="id"  name="id" placeholder="reference de l'autorisation*" required [(ngModel)]="autorisationAdd.id" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                              <div class="form-group">
-                                <label> Votre Matricule:</label>
-                                <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="votre nom*" required [(ngModel)]="nom" [disabled]="true"/><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                                <div class="form-group">
-                                  <label> Actif:</label>
-                                  <select ngModel class="form-control" name="actifS" required [(ngModel)]="autorisationAdd.actif" id="actifS" >
-                                    <option *ngFor="let actif of actifs" value={{actif.id}}>{{actif.reference}}</option>
-                                  </select>
-                                 <small class="form-text text-danger help-block lead"></small></div>
-
-                                <div class="form-group">
-                                  <label> Lieu D'affectation:</label>
-                                  <input ngModel class="form-control" type="text" id="lieuAffectation"  name="tlieuAffectation" placeholder="lieu Affectation*" required [(ngModel)]="autorisationAdd.lieuAffectation" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                                  <div class="form-group">
-                                    <label> Date:</label>
-                                  <input ngModel class="form-control" type="Date" id="Date"  name="Date" placeholder="Date*"  [(ngModel)]="autorisationAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-
-
-                                </div>
-
-                                  <div class="col-md-6">
-
-<br>
-<br>
-<br>
-                                  <div class="form-group">
-                                    <label> Définitive A Partir De:</label>
-                                    <input ngModel class="form-control" type="Date" id="Definitive"  name="Definitive" placeholder="Definitive*" [(ngModel)]="autorisationAdd.Definitive" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                                    <div class="form-group">
-                                      <label> Temporaire Du:</label>
-                                      <input ngModel class="form-control" type="Date" id="temporaireDe"  name="temporaireDe" placeholder="temporaireDe*"  [(ngModel)]="autorisationAdd.temporaireDe" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                                      <div class="form-group">
-                                        <label> Au:</label>
-                                        <input ngModel class="form-control" type="Date" id="temporaireAu"  name="temporaireAu" placeholder="temporaireAu*" [(ngModel)]="autorisationAdd.temporaireAu" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-
-
-                            </div>
-
-
-
-
-
-                        <div class="clearfix"></div>
-                        <div class="col-lg-12 text-center">
-                            <div id="success"></div>
-                            <button
-
-
-                            (click)="createAutorisation()"
-                             class="btn btn-warning btn-xl text-uppercase" type="submit">Ajouter</button>
-
-                             <button
-                             (click)="Annuler()"
-                             class="btn btn-warning btn-xl text-uppercase" type="submit">Annuler</button>
-                        </div>
-                      </div>
-                </form>
-            </div>
-        </div>
-      </div>
-      </div>
-
-
-  </section>
-  <section class="bg-light" id="list" *ngIf="authService.isAuthenticated()">
+  <section class="bg-light" id="list" *ngIf="role == 'responsable'" >
     <div style="background-color: bg-info"  >
       <div class="container" >
         <div class="row">
@@ -176,6 +96,90 @@
                 </tr>
             </table>
 
+            </div>
+        </div>
+      </div>
+      </div>
+
+
+  </section>
+  <section class="bg-light" id="ajouter">
+    <div style="background-color: bg-info"  >
+      <div class="container" >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Demander Une autorisation</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <form #monFormulaire="ngForm">
+                    <div class="form-row">
+                        <div class="col-md-6">
+
+
+                            <div class="form-group">
+                              <label> Réference:</label>
+                              <input ngModel class="form-control" type="text" id="id"  name="id" placeholder="reference de l'autorisation*" required [(ngModel)]="autorisationAdd.id" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                              <div class="form-group">
+                                <label> Votre Matricule:</label>
+                                <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="votre nom*" required [(ngModel)]="nom" [disabled]="true"/><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group">
+                                  <label> Actif:</label>
+                                  <select ngModel class="form-control" name="actifS" required [(ngModel)]="autorisationAdd.actif" id="actifS" >
+                                    <option *ngFor="let actif of actifs" value={{actif.id}}> {{actif.reference}} : {{actif.nom}}</option>
+                                  </select>
+
+
+                                 <small class="form-text text-danger help-block lead"></small></div>
+
+                                <div class="form-group">
+                                  <label> Lieu D'affectation:</label>
+                                  <input ngModel class="form-control" type="text" id="lieuAffectation"  name="tlieuAffectation" placeholder="lieu Affectation*" required [(ngModel)]="autorisationAdd.lieuAffectation" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                  <div class="form-group">
+                                    <label> Date:</label>
+                                  <input ngModel class="form-control" type="Date" id="Date"  name="Date" placeholder="Date*"  [(ngModel)]="autorisationAdd.Date" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+                                </div>
+
+                                  <div class="col-md-6">
+
+<br>
+<br>
+<br>
+                                  <div class="form-group">
+                                    <label> Définitive A Partir De:</label>
+                                    <input ngModel class="form-control" type="Date" id="Definitive"  name="Definitive" placeholder="Definitive*" [(ngModel)]="autorisationAdd.Definitive" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                    <div class="form-group">
+                                      <label> Temporaire Du:</label>
+                                      <input ngModel class="form-control" type="Date" id="temporaireDe"  name="temporaireDe" placeholder="temporaireDe*"  [(ngModel)]="autorisationAdd.temporaireDe" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                      <div class="form-group">
+                                        <label> Au:</label>
+                                        <input ngModel class="form-control" type="Date" id="temporaireAu"  name="temporaireAu" placeholder="temporaireAu*" [(ngModel)]="autorisationAdd.temporaireAu" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
+
+                            </div>
+
+
+
+
+
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                            <div id="success"></div>
+                            <button
+
+
+                            (click)="createAutorisation()"
+                             class="btn btn-warning  text-uppercase" type="submit">Ajouter</button>
+
+                             <button
+                             (click)="Annuler()"
+                             class="btn btn-warning text-uppercase" type="submit">Annuler</button>
+                        </div>
+                      </div>
+                </form>
             </div>
         </div>
       </div>

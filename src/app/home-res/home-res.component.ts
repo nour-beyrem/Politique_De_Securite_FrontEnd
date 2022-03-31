@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../authentification/auth.service';
+import { TokenService } from '../authentification/token.service';
 
 @Component({
   selector: 'app-home-res',
@@ -9,10 +10,15 @@ import { AuthService } from '../authentification/auth.service';
   styleUrls: ['./home-res.component.css']
 })
 export class HomeResComponent implements OnInit {
-
-  constructor(public router: Router,public authService:AuthService,private toaster: ToastrService) { }
+username:any
+role:any
+  constructor(public router: Router,private token: TokenService,public authService:AuthService,private toaster: ToastrService) { }
 
   ngOnInit(): void {
+    this.username=this.token.getInfos().username;
+    this.role=this.token.getInfos().role;
+    console.log(this.role)
+
   }
 
   logout(): void {

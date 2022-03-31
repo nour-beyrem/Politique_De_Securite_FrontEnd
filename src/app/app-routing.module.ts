@@ -32,6 +32,7 @@ import { ReunionCComponent } from './reunionC/reunion-c/reunion-c.component';
 import { UpdateReunionComponent } from './reunionC/update-reunion/update-reunion.component';
 import { SortieComponent } from './sortie/sortie.component';
 import { UpdateSortieComponent } from './sortie/update-sortie/update-sortie.component';
+import { ProfileComponent } from './user/profile/profile.component';
 import { SignatureComponent } from './user/signature/signature.component';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
 import { UserActifComponent } from './user/user-actif/user-actif.component';
@@ -57,6 +58,7 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'programme', component:ProgrammeComponent},
 {path: 'sigP', component:SignaturePComponent},
 {path: 'sigS', component:SignatureSComponent},
+{path: 'profile', component:ProfileComponent},
 {path: 'autorisation', component:AutorisationComponent},
 {path: 'updateReunion/:id', component:UpdateReunionComponent},
 {path: 'updateMatrice/:id', component:UpdateMatriceComponent},

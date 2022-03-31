@@ -55,6 +55,7 @@ import { MaterialFileInputModule } from 'ngx-material-file-input';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import { SignaturePComponent } from './externe/signature-p/signature-p.component';
 import { SignatureSComponent } from './externe/signature-s/signature-s.component';
+import { ProfileComponent } from './user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import { SignatureSComponent } from './externe/signature-s/signature-s.component
     UpdateMatriceComponent,
     SignaturePComponent,
     SignatureSComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
