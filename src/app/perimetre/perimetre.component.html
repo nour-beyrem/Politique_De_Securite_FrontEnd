@@ -54,18 +54,18 @@
                 <h2 class="text-uppercase section-heading">Liste Des Perimetre</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <div class="col-lg-12">
               <input ngModel class="form-control" type="text" id="id"  name="id" placeholder="id *" required [(ngModel)]="id" (keyup)="Recherche()"/><small class="form-text text-danger flex-grow-1 help-block lead"></small>
 
-              <table class="table" id='perimetre' >
+              <table class="table table-bordered table-striped mb-0" id='perimetre' >
                 <thead class="thead-dark" type="color" value="#123456" >
                     <tr >
                         <th>ID</th>
                         <th>Nom</th>
                         <th>controle Acces </th>
                         <th>criticite CID</th>
-                        <th>proprietaire</th>
+                        <th>Site</th>
                         <th>Traitement</th>
 
 
@@ -77,7 +77,7 @@
                     <th>{{perimetre.nom}}</th>
                     <th>{{perimetre.controleAcces}}</th>
                     <th>{{perimetre.criticiteCID}}</th>
-                    <th>{{perimetre.proprietaire.prenom}} {{perimetre.proprietaire.nom}}</th>
+                    <th>{{perimetre.site}} </th>
 
                     <th>
                       <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updatePerimetre',perimetre.id]"> update</button>
@@ -113,6 +113,10 @@
                             <div class="form-group">
                               <label> Perimetre:</label>
                                 <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="nom du perimetre*" required [(ngModel)]="perimetreAdd.nom" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <div class="form-group">
+                                  <label> Site:</label>
+                                  <input ngModel class="form-control" type="text" id="site"  name="site" placeholder="site du perimetre*" required [(ngModel)]="perimetreAdd.site" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+
                                 <div class="form-group">
                                   <label> Controle D'acces:</label>
                                   <input ngModel class="form-control" type="text" id="controleAcces"  name="controleAcces" placeholder="controle d'acces du perimetre*" required [(ngModel)]="perimetreAdd.controleAcces" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>

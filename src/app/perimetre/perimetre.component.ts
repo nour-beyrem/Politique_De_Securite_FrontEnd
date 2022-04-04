@@ -29,6 +29,7 @@ export class PerimetreComponent implements OnInit {
     deletedAt:'',
 
     nom: '',
+    site:'',
     controleAcces: '',
     mesureSecurite:'',
     criticiteCID:'',
@@ -79,7 +80,7 @@ this.userService.getUsers().subscribe((result:any)=>{
     const data = {
 
       nom: this.perimetreAdd.nom,
-
+      site: this.perimetreAdd.site,
       controleAcces: this.perimetreAdd.controleAcces,
       mesureSecurite:this.perimetreAdd.mesureSecurite,
       criticiteCID:this.perimetreAdd.criticiteCID,
@@ -102,6 +103,7 @@ this.userService.getUsers().subscribe((result:any)=>{
           updatedAt:'',
           deletedAt:'',
           nom: '',
+          site:'',
           controleAcces: '',
           mesureSecurite:'',
           criticiteCID:'',
@@ -127,6 +129,7 @@ Annuler(){
     updatedAt:'',
     deletedAt:'',
     nom: '',
+    site:'',
     controleAcces: '',
     mesureSecurite:'',
     criticiteCID:'',

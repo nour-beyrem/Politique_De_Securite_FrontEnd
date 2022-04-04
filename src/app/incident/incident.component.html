@@ -54,12 +54,12 @@
                 <h2 class="text-uppercase section-heading">Liste Des Incidents</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <div class="col-lg-12">
               <div class="form-group">
                 <input ngModel class="form-control" type="text" id="id"  name="id" placeholder="id *" required [(ngModel)]="id" (keyup)="Recherche()"/><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
-              <table class="table" id='incident' >
+              <table class="table table-bordered table-striped mb-0" id='incident' >
                 <thead class="thead-dark" type="color" value="#123456" >
                     <tr >
                         <th>ID</th>
@@ -81,7 +81,7 @@
                     <th>{{incident.source}}</th>
                     <th>{{incident.destination}}</th>
                     <th>{{incident.impact}}</th>
-                    <th>{{incident.Date| date}}</th>
+                    <th>{{incident.Date}}</th>
 
 
                     <th>

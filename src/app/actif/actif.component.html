@@ -54,20 +54,20 @@
                 <h2 class="text-uppercase section-heading">Liste Des Actifs</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <div class="col-lg-12">
               <div class="form-group">
 
                 <input ngModel class="form-control" type="text" id="ref"  name="ref" placeholder="id de l'actif" required [(ngModel)]="ref" (keyup)="Rechercher()"/><small class="form-text text-danger flex-grow-1 help-block lead"></small>
 </div>
-              <table class="table" id='actif' >
+              <table class="table table-bordered table-striped mb-0" id='actif' >
                 <thead class="thead-dark" type="color" value="#123456" >
                     <tr >
                         <th>Référence</th>
                         <th>Nom</th>
                         <th>Type </th>
                         <th>Adresse IP</th>
-                        <th>Proprietiare</th>
+                        <th>Site</th>
                         <th>Traitement</th>
 
 
@@ -79,7 +79,7 @@
                     <th>{{actif.nom}}</th>
                     <th>{{actif.type}}</th>
                     <th>{{actif.adresseIP}}</th>
-                    <th>{{actif.proprietaire.prenom}} {{actif.proprietaire.nom}}</th>
+                    <th>{{actif.localisation}}</th>
 
                     <th>
                       <button   type="button" class="btn btn-outline-secondary" [routerLink]="['/updateActif',actif.id]">Modifier</button>
