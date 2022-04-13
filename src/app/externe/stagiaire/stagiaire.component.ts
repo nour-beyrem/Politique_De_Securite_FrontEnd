@@ -149,6 +149,7 @@ export class StagiaireComponent implements OnInit {
       },
       (error) => {
         console.log(error);
+        this.toaster.error('vous devez verifier vos champs ')
       });
 
 }

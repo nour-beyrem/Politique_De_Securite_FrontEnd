@@ -17,6 +17,7 @@ export class UpdateProgrammeComponent implements OnInit {
   user:any;
   support:any
   users:any
+  filePath:any
 
   constructor(private userService : UserAuthService,private sanitizer: DomSanitizer,public router: Router,  private toaster: ToastrService,private activatedRoute:ActivatedRoute,private programme:ProgrammeService) { }
 

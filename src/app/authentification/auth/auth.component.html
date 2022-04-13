@@ -18,10 +18,10 @@
                 </div>
                 <div class="card-body">
                     <form [formGroup]="loginForm" (ngSubmit)="signIn()">
-                      <h4 class="text-white" >Matricule :</h4>  <input    ngModel formControlName="username" type="text" class="form-control" />
-                      <h4 class="text-white" >Password :</h4>    <input ngModel  minlength="4" formControlName="password" type="password" class="form-control" />
+                      <h4 class="text-white" >Matricule :</h4>  <input   required ngModel formControlName="username" type="text" class="form-control" />
+                      <h4 class="text-white" >Password :</h4>    <input  ngModel required  minlength="4" formControlName="password" type="password" class="form-control"   />
                         <div class="form-group">
-                            <button mat-dialog-close (click)="signIn()" type="submit" class="btn float-right  btn-warning"> login </button>
+                            <button [disabled]="loginForm.invalid" mat-dialog-close (click)="signIn()" type="submit" class="btn float-right  btn-warning"> login </button>
 
                               </div>
                     </form>

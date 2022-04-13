@@ -78,6 +78,7 @@ color: white;
 .links a{
 margin-left: 4px;
 }
-input.ng-invalid.ng-touched {
+.ng-invalid.ng-touched {
   border: red solid 2px;
 }
+

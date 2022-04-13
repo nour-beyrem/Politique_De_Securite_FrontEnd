@@ -29,6 +29,7 @@
                         <th>Nom</th>
                         <th>Type </th>
                         <th>Adresse IP</th>
+                        <th>Retirer</th>
 
 
 
@@ -42,7 +43,9 @@
                     <th>{{actif.type}}</th>
                     <th>{{actif.adresseIP}}</th>
 
-
+                    <th>
+                      <button type="button" class="btn btn-outline-secondary" (click)="deleteActif(actif.id)">Supprimer</button>
+                  </th>
 
 
                 </tr>

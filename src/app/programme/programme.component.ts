@@ -130,6 +130,7 @@ export class ProgrammeComponent implements OnInit {
       (error) => {
         console.log(error);
         console.log(this.programmeAdd.publicConcerne.toString())
+        this.toaster.error('vous devez verifier vos champs ')
       });
 
 }

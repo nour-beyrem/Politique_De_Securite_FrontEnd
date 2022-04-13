@@ -151,10 +151,10 @@
                                            <small class="form-text text-danger help-block lead"></small></div>
                             <div class="form-group">
                               <label>Pv Du Programme</label>
-                              <textarea ngModel class="form-control" type="text" id="pv"  name="pv" placeholder="pv du programme*" required [(ngModel)]="programmeAdd.pv" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
+                              <textarea ngModel class="form-control" type="text" id="pv"  name="pv" placeholder="pv du programme*"  [(ngModel)]="programmeAdd.pv" ><small class="form-text text-danger flex-grow-1 help-block lead"></small> </textarea></div>
                               <div class="form-group">
                                 <label>Liste de Présence</label>
-                                <input ngModel class="form-control" type="file" id="presence"  name="presence" placeholder="liste de presence du programme*" required [(ngModel)]="programmeAdd.presence" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                <input ngModel class="form-control" type="file" id="presence"  name="presence" placeholder="liste de presence du programme*" [(ngModel)]="programmeAdd.presence" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
 
                             </div>
@@ -168,7 +168,7 @@
                             <div id="success"></div>
                             <button
 
-
+[disabled]="monFormulaire.invalid"
                             (click)="createProgramme()"
                              class="btn btn-warning  text-uppercase" type="submit">Ajouter</button>
 

@@ -135,16 +135,16 @@
                                       </div> <div class="col-md-6">
                                       <div class="form-group">
                                         <label> Serveur D'Application:</label>
-                                        <input ngModel class="form-control" type="text" id="serveurApplication"  name="serveurApplication" placeholder="serveur d'application de l'actif*" required [(ngModel)]="actifAdd.serveurApplication" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                        <input ngModel class="form-control" type="text" id="serveurApplication"  name="serveurApplication" placeholder="serveur d'application de l'actif*"  [(ngModel)]="actifAdd.serveurApplication" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                         <div class="form-group">
                                           <label> Base De Donnée:</label>
-                                          <input ngModel class="form-control" type="text" id="bd"  name="bd" placeholder="base de donnée de l'actif*" required [(ngModel)]="actifAdd.bd" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                          <input ngModel class="form-control" type="text" id="bd"  name="bd" placeholder="base de donnée de l'actif*"  [(ngModel)]="actifAdd.bd" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                           <div class="form-group">
                                             <label> OS:</label>
-                                            <input ngModel class="form-control" type="text" id="os"  name="os" placeholder="os de l'actif*" required [(ngModel)]="actifAdd.os" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                            <input ngModel class="form-control" type="text" id="os"  name="os" placeholder="os de l'actif*"  [(ngModel)]="actifAdd.os" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                             <div class="form-group">
                                               <label> DMIA:</label>
-                                              <input ngModel class="form-control" type="text" id="dmia"  name="dmia" placeholder="DMIA de l'actif*" required [(ngModel)]="actifAdd.dmia" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                                              <input ngModel class="form-control" type="text" id="dmia"  name="dmia" placeholder="DMIA de l'actif*"  [(ngModel)]="actifAdd.dmia" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                               <div class="form-group">
                                                 <label> Criticité CID:</label>
                                                 <input ngModel class="form-control" type="number" id="criticiteCID"  name="criticiteCID" placeholder="criticite CID de l'actif*" required [(ngModel)]="actifAdd.criticiteCID" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
@@ -174,7 +174,7 @@
 
 
                             (click)="createActif()"
-                             class="btn btn-warning  text-uppercase" type="submit">Ajouter</button>
+                             class="btn btn-warning  text-uppercase" type="submit" [disabled]="monFormulaire.invalid">Ajouter</button>
 
                              <button
                              (click)="Annuler()"

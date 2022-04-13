@@ -108,6 +108,7 @@ export class ReunionCComponent implements OnInit {
       (error) => {
         console.log(this.reunionAdd)
         console.log(error);
+        this.toaster.error('vous devez verifier vos champs ')
       });
 
 }

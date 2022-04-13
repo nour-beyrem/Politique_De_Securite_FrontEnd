@@ -6,3 +6,9 @@
 .table-wrapper-scroll-y {
   display: block;
   }
+
+.ng-invalid.ng-touched {
+    border: red solid 2px;
+  }
+
+

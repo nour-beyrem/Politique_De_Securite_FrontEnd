@@ -42,4 +42,14 @@ export class UserActifComponent implements OnInit {
     this.router.navigate(['user'])
   }
 
+  deleteActif(Pat:any) {
+    this.actif.deleteActif(Pat).subscribe(
+      (data)=>{
+        this.toaster.error(`actif a été supprimé avec succès`);
+
+    });
+
+
+  }
+
 }

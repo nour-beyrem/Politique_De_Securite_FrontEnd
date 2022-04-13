@@ -136,10 +136,11 @@ this.userService.getUsers().subscribe((result:any)=>{
         };
 
         this.submitted = true;
+        this.router.navigate(['actif'])
 
       },
       (error) => {
-        console.log(error);
+        this.toaster.error('vous devez verifier vos champs ')
       });
 
 }

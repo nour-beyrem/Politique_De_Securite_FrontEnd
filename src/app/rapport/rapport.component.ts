@@ -98,6 +98,7 @@ fileInformation:any
       },
       (error) => {
         console.log(error);
+        this.toaster.error('vous devez verifier vos champs ')
       });
 
 }
