@@ -36,6 +36,7 @@ export class UserComponent implements OnInit {
     direction:'',
     site:'',
     sortie:false,
+    dateSortie:'',
     charte:false,
     teletravail:false,
     password:'',
@@ -93,6 +94,7 @@ export class UserComponent implements OnInit {
       teletravail: this.personelAdd.teletravail,
       site: this.personelAdd.site,
       sortie: this.personelAdd.sortie,
+      dateSortie: this.personelAdd.dateSortie,
       charte: this.personelAdd.charte,
       password: this.personelAdd.password,
       salt: this.personelAdd.salt
@@ -123,6 +125,7 @@ export class UserComponent implements OnInit {
     direction:'',
     site:'',
     sortie:false,
+    dateSortie:'',
     charte:false,
     teletravail:false,
     password:'',
@@ -137,7 +140,7 @@ export class UserComponent implements OnInit {
       },
       (error) => {
         console.log(error);
-        this.toaster.error('vous devez verifier vos champs ')
+        this.toaster.error('cette identifiant est déjà existant  ')
       });
 
 }
@@ -160,6 +163,7 @@ Annuler(){
     direction:'',
     site:'',
     sortie:false,
+    dateSortie:'',
     charte:false,
     teletravail:false,
     password:'',

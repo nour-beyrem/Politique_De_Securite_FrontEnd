@@ -18,7 +18,7 @@
     <div class="container" >
       <div class="row">
           <div class="col-lg-12 text-center">
-              <h1 class="text-uppercase section-heading">Autorisation de l'autorisation de l'actif </h1>
+              <h1 class="text-uppercase section-heading">Etude De La Demande </h1>
           </div>
       </div>
       <div class="row">
@@ -33,7 +33,7 @@
                       <input ngModel class="form-control" type="text" id="actif"  name="actif" placeholder="actif*"disabled="true" [(ngModel)]="autorisationAdd.actif.reference" value={{autorisationAdd.actif.reference}} /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                       <div class="form-group">
                         <label> Agent Matricule:</label>
-                        <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="votre nom*" disabled="true"   [(ngModel)]="autorisationAdd.user.username" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                        <input ngModel class="form-control" type="text" id="nom"  name="nom" placeholder="votre nom*" disabled="true"  value="userA" [value]="userA" [(ngModel)]="userA" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
 
                         <div class="form-group">
@@ -64,7 +64,7 @@
                         <input ngModel class="form-control" type="Date" id="DateOK"  name="DateOK" placeholder="DateOK*" required [(ngModel)]="autorisationAdd.DateOK" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                         <div class="form-group">
                           <label> Votre Matricule:</label>
-                          <input ngModel class="form-control" type="text" disabled="true" id="nom"  name="nom" placeholder="votre nom*" required value="userR" [(ngModel)]="autorisationAdd.user.username" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                          <input ngModel class="form-control" type="text" disabled="true" id="nomr"  name="nomr" placeholder="votre nom*" required value="userR" [(ngModel)]="userR" /><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
 
 
                           <div>

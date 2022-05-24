@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ActifService } from 'src/app/actif/actif.service';
 import { UserAuthService } from 'src/app/authentification/user.service';
+import { TokenService } from 'src/app/authentification/token.service';
 
 @Component({
   selector: 'app-update-autorisation',
@@ -23,7 +24,7 @@ export class UpdateAutorisationComponent implements OnInit {
   partenaire:any
 
 
-  constructor(public router: Router,  private toaster: ToastrService,private activatedRoute:ActivatedRoute,private actif:ActifService, private userService : UserAuthService, private autorisation:AutorisationService) { }
+  constructor(private token: TokenService,public router: Router,  private toaster: ToastrService,private activatedRoute:ActivatedRoute,private actif:ActifService, private userService : UserAuthService, private autorisation:AutorisationService) { }
 
   ngOnInit(): void {
 
@@ -39,7 +40,9 @@ export class UpdateAutorisationComponent implements OnInit {
        this.autorisationAdd=result[0];
        console.log(this.autorisationAdd)
 this.userA=this.autorisationAdd.user.username
-this.userR=this.autorisationAdd.responsable.username
+console.log(this.userA)
+this.userR=this.token.getInfos().username;
+
 this.actifS=this.autorisationAdd.actif.id
       },
       (error)=>{

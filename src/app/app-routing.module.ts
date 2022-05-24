@@ -24,6 +24,7 @@ import { MatriceComponent } from './matrice/matrice.component';
 import { UpdateMatriceComponent } from './matrice/update-matrice/update-matrice.component';
 import { PerimetreComponent } from './perimetre/perimetre.component';
 import { UpdatePerimetreComponent } from './perimetre/update-perimetre/update-perimetre.component';
+import { PowerbiComponent } from './powerbi/powerbi.component';
 import { ProgrammeComponent } from './programme/programme.component';
 import { UpdateProgrammeComponent } from './programme/update-programme/update-programme.component';
 import { RapportComponent } from './rapport/rapport.component';
@@ -59,6 +60,7 @@ const routes: Routes = [{path: '', component: AuthComponent},
 {path: 'sigP', component:SignaturePComponent},
 {path: 'sigS', component:SignatureSComponent},
 {path: 'profile', component:ProfileComponent},
+{path: 'power', component:PowerbiComponent},
 {path: 'autorisation', component:AutorisationComponent},
 {path: 'updateReunion/:id', component:UpdateReunionComponent},
 {path: 'updateMatrice/:id', component:UpdateMatriceComponent},

@@ -56,6 +56,7 @@ import { MatFileUploadModule } from 'angular-material-fileupload';
 import { SignaturePComponent } from './externe/signature-p/signature-p.component';
 import { SignatureSComponent } from './externe/signature-s/signature-s.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { PowerbiComponent } from './powerbi/powerbi.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +103,7 @@ import { ProfileComponent } from './user/profile/profile.component';
     SignaturePComponent,
     SignatureSComponent,
     ProfileComponent,
+    PowerbiComponent,
   ],
   imports: [
     BrowserModule,

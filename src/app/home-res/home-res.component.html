@@ -21,6 +21,15 @@
                 <b> Signature</b>
               </a>
             </li>
+            <li class="nav-item">
+              <a
+                *ngIf="authService.isAuthenticated()"
+                class="nav-link"
+                [routerLink]="['/power']"
+              > <i class="material-icons">verified_user</i>
+                <b> Dashbords</b>
+              </a>
+            </li>
 
             <li class="nav-item">
               <a
@@ -60,7 +69,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">group_work</i></h4>
-      <img  style="background-image:url('assets/image/cellule.jpg');" >
+      <img  style="background-image:url('assets/image/cellule.jpg');" [routerLink]="['/cellule']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/cellule']">Cellule De Sécurité</a>
 
@@ -69,7 +78,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">group_work</i></h4>
-      <img style="background-image:url('assets/image/cellule.jpg');  background-size: cover;" >
+      <img style="background-image:url('assets/image/cellule.jpg');  background-size: cover;" [routerLink]="['/reunion']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/reunion']">Reunion Cellule</a>
     </div>
@@ -77,7 +86,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">group</i></h4>
-      <img style="background-image:url('assets/image/personel.jpg');">
+      <img style="background-image:url('assets/image/personel.jpg');" [routerLink]="['/user']">
           <h5 class="card-title mt-3 mb-3"></h5>
 
           <a class="nav-link js-scroll-trigger" [routerLink]="['/user']" >Personnels</a>
@@ -86,7 +95,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">computer</i></h4>
-      <img style="background-image:url('assets/image/actif.jpg');">
+      <img style="background-image:url('assets/image/actif.jpg');" [routerLink]="['/actif']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/actif']">Actifs</a>
 
@@ -96,7 +105,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">language</i></h4>
-      <img style="background-image:url('assets/image/information.jpg');  background-size: cover;" >
+      <img style="background-image:url('assets/image/information.jpg');  background-size: cover;" [routerLink]="['/information']" >
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/information']">Informations</a>
     </div>
@@ -105,7 +114,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">warning</i></h4>
-      <img style="background-image:url('assets/image/incident.jpg');" >
+      <img style="background-image:url('assets/image/incident.jpg');" [routerLink]="['/incident']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/incident']">Incidents</a>
     </div>
@@ -113,7 +122,7 @@
       <div class="col-md-3 col-sm-6" >
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">library_add</i></h4>
-      <img style="background-image:url('assets/image/information.jpg');" >
+      <img style="background-image:url('assets/image/information.jpg');" [routerLink]="['/autorisation']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/autorisation']">Demande Autorisation D'utilisation D'actif</a>
     </div>
@@ -122,7 +131,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">location_on</i></h4>
-      <img style="background-image:url('assets/image/perimetre.png');  background-size: cover; " >
+      <img style="background-image:url('assets/image/perimetre.png');  background-size: cover; " [routerLink]="['/perimetre']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/perimetre']">Perimetre</a>
     </div>
@@ -130,7 +139,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">view_list</i></h4>
-      <img style="background-image:url('assets/image/programme.jpg');" >
+      <img style="background-image:url('assets/image/programme.jpg');" [routerLink]="['/programme']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/programme']">Programmes De Sensibilisation</a>
     </div>
@@ -138,15 +147,15 @@
       <div class="col-md-3 col-sm-6" >
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">build</i></h4>
-      <img style="background-image:url('assets/image/sortie.png');  background-size: cover;" >
+      <img style="background-image:url('assets/image/sortie.png');  background-size: cover;" [routerLink]="['/sortie']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/sortie']">Demander Une Sortie D'actif Pour Maintenance</a>
     </div>
       </div>
-      <div class="col-md-3 col-sm-6"  *ngIf="role == 'responsable'">
+      <div class="col-md-3 col-sm-6"  *ngIf="role == 'responsable'" >
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">assignment</i></h4>
-      <img style="background-image:url('assets/image/rapport.jpg');  background-size: cover;" >
+      <img style="background-image:url('assets/image/rapport.jpg');  background-size: cover;" [routerLink]="['/rapport']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/rapport']">Rapport</a>
     </div>
@@ -155,7 +164,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">build</i></h4>
-      <img style="background-image:url('assets/image/sortie.png');  background-size: cover;" >
+      <img style="background-image:url('assets/image/sortie.png');  background-size: cover;" [routerLink]="['/matrice']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/matrice']">Matrice De Flux</a>
     </div>
@@ -163,7 +172,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">school</i></h4>
-      <img style="background-image:url('assets/image/stage.jpg');  " >
+      <img style="background-image:url('assets/image/stage.jpg');  " [routerLink]="['/stagiaire']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/stagiaire']">Les Stagiaires</a>
     </div>
@@ -171,7 +180,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">work</i></h4>
-      <img style="background-image:url('assets/image/partenaire.jpg');  background-size: cover;" >
+      <img style="background-image:url('assets/image/partenaire.jpg');  background-size: cover;" [routerLink]="['/partenaire']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/partenaire']">Les Partenaires</a>
     </div>
@@ -180,7 +189,7 @@
       <div class="col-md-3 col-sm-6" *ngIf="role == 'responsable'">
         <div class="card card-block">
         <h4 class="card-title text-right"><i class="material-icons">library_books</i></h4>
-      <img style="background-image:url('assets/image/document.jpg');  background-size: cover;" >
+      <img style="background-image:url('assets/image/document.jpg');  background-size: cover;" [routerLink]="['/document']">
           <h5 class="card-title  mt-3 mb-3"></h5>
           <a class="nav-link js-scroll-trigger" [routerLink]="['/document']">Document</a>
     </div>

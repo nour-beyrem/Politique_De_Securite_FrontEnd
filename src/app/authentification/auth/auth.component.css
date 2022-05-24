@@ -78,7 +78,5 @@ color: white;
 .links a{
 margin-left: 4px;
 }
-.ng-invalid.ng-touched {
-  border: red solid 2px;
-}
+
 

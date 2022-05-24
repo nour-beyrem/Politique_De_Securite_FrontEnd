@@ -123,8 +123,17 @@
                             <input ngModel class="form-control" type="text" id="prenom" name="prenom"  placeholder="prenom *"  required [(ngModel)]="personelAdd.prenom" /><small class="form-text text-danger help-block lead"></small></div>
 
                              <div class="form-group">
-                              <label> Sexe:</label>
-                              <input ngModel class="form-control" type="text" id="sexe" name="sexe"  placeholder="sexe *" required [(ngModel)]="personelAdd.sexe" /><small class="form-text text-danger help-block lead"></small></div>
+                                <label> Sexe:</label>
+    <form>
+                                      <select  ngModel class="form-control" type="text" id="sexe" name="sexe"  placeholder="sexe *" required [(ngModel)]="personelAdd.sexe">
+                                        <option value="">--Sexe--</option>
+                                        <option>Male </option>
+                                        <option>Female</option>
+
+                                        </select>
+                                      </form>
+                                      </div>
+
                               <div class="form-group">
                                 <label> Adresse:</label>
                                   <input ngModel class="form-control" type="text" id="adresse" name="adresse"  placeholder="adresse *" required [(ngModel)]="personelAdd.adresse" /><small class="form-text text-danger help-block lead"></small></div>
@@ -168,16 +177,20 @@
 
                                         <div class="form-group">
                                           <label> Direction:</label>
-                                          <input ngModel class="form-control" type="text" id="direction" name="direction"  placeholder="direction  *" required [(ngModel)]="personelAdd.direction" /><small class="form-text text-danger help-block lead"></small></div>
+                                          <input ngModel class="form-control" type="text" id="direction" name="direction"  placeholder="direction  "  [(ngModel)]="personelAdd.direction" /><small class="form-text text-danger help-block lead"></small></div>
                                      <div>
 
-                                                <input type="checkbox" id="teletravail" name="teletravail" value="personelAdd.teletravail"  required  [(ngModel)]="personelAdd.teletravail">
-                                                <label for="teletravail">c'est un télé travailleur ?</label>
+                                                <input type="checkbox" id="teletravail" name="teletravail" value="personelAdd.teletravail"   [(ngModel)]="personelAdd.teletravail">
+                                                <label for="teletravail"> Télétravail </label>
                                               </div>
                                               <div>
-                                                    <input type="checkbox" id="sortie" name="sortie" value="personelAdd.sortie"  required [(ngModel)]="personelAdd.sortie">
-                                                    <label for="sortie">sortie ?</label>
+                                                    <input type="checkbox" id="sortie" name="sortie" value="personelAdd.sortie"   [(ngModel)]="personelAdd.sortie">
+                                                    <label for="sortie">Depart ?</label>
                                                   </div>
+                                                  <div class="form-group">
+                                                    <label> Date Depart:</label>
+                                                    <input ngModel class="form-control" type="date" id="dateSortie" name="direction"  placeholder="dateSortie  "  [(ngModel)]="personelAdd.dateSortie" /><small class="form-text text-danger help-block lead"></small></div>
+
 
                                                 </div>
 
